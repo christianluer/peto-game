@@ -16,6 +16,12 @@ function map:on_started()
   if sol.audio.get_music() ~= "eduardo/village" then
     sol.audio.play_music("eduardo/village")
   end
+  local open = game:get_value("denna_yard_open") == true
+  for entity in map:get_entities_by_type("teletransporter") do
+    if entity:get_destination_map() == "home_yard" then
+      entity:set_enabled(open)
+    end
+  end
 end
 
 -- Event called after the opening transition effect of the map,

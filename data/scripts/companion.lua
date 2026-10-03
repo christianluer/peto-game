@@ -45,12 +45,59 @@ local function wrap_words(text, limit)
   return lines
 end
 
+local POEM = "Denna, I have no name for the wind, only for you. If the road takes you, it does not take the line I wrote. Come back and read it."
+
+local function in_poem_corner(game)
+  local map = game:get_map()
+  if map == nil or map:get_id() ~= "first_map" then
+    return false
+  end
+  local hero = map:get_hero()
+  if hero == nil then
+    return false
+  end
+  local x, y = hero:get_position()
+  return x <= 80 and y <= 80
+end
+
+local function open_yard(game)
+  game:set_value("denna_yard_open", true)
+  local map = game:get_map()
+  if map == nil then
+    return
+  end
+  for entity in map:get_entities_by_type("teletransporter") do
+    if entity:get_destination_map() == "home_yard" then
+      entity:set_enabled(true)
+    end
+  end
+end
+
 local function show_line(npc)
   bubble = {
     npc = npc,
     lines = wrap_words(npc.line, 18),
     until_ms = sol.main.get_elapsed_time() + 4500,
   }
+end
+
+local open_chat
+
+local function talk_denna(game, npc)
+  if game:get_value("has_poem") ~= true then
+    npc.line = "Where is the poem? I will not speak of us until I have read it."
+    show_line(npc)
+    npc.line = nil
+    return
+  end
+  if game:get_value("denna_yard_open") ~= true then
+    npc.line = "Kill the demon king before you talk to me about feelings."
+    show_line(npc)
+    npc.line = nil
+    open_yard(game)
+    return
+  end
+  open_chat(game, npc.chat_who)
 end
 
 function bubble_menu:on_draw(dst)
@@ -323,7 +370,7 @@ local function nearby_other(game)
   return nearest
 end
 
-local function open_chat(game, who)
+function open_chat(game, who)
   if chat_open then
     return
   end
@@ -392,7 +439,7 @@ local function attach(map)
     end
   end
   function npc:on_interaction()
-    open_chat(map:get_game())
+    talk_denna(map:get_game(), npc)
   end
   sol.timer.start(npc, 400, function()
     follow(npc)
@@ -408,12 +455,20 @@ game_meta:register_event("on_key_pressed", function(game, key)
     return false
   end
   -- Swallow the key so "f" is not typed into the prompt.
-  return nearby_other(game) ~= nil
+  return nearby_other(game) ~= nil or in_poem_corner(game)
 end)
 
 game_meta:register_event("on_key_released", function(game, key)
   if key ~= "f" or chat_open or game:is_suspended() then
     return false
+  end
+  if in_poem_corner(game) then
+    local hero = game:get_map():get_hero()
+    hero.line = POEM
+    show_line(hero)
+    hero.line = nil
+    game:set_value("has_poem", true)
+    return true
   end
   local npc = nearby_other(game)
   if npc == nil then
@@ -421,6 +476,10 @@ game_meta:register_event("on_key_released", function(game, key)
   end
   if npc.line ~= nil then
     show_line(npc)
+    return true
+  end
+  if npc.chat_who ~= nil and npc.chat_who.key == "denna" then
+    talk_denna(game, npc)
     return true
   end
   if npc.chat_who ~= nil then

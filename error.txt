@@ -1,2 +1,78 @@
-[Solarus] [104710] Error: Map 'home_yard': No such destination: 'from_fair'
-[Solarus] [104710] Error: Map 'home_yard': No such destination: 'from_fair'
+[Solarus] [32630] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [35350] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [36010] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [36560] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [37380] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [37750] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [38050] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [70150] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [74330] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [74660] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [74820] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [116900] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>
+[Solarus] [117120] Error: In on_key_released: scripts/companion.lua:98: attempt to call global 'open_chat' (a nil value)
+stack traceback:
+	[C]: in function 'open_chat'
+	scripts/companion.lua:98: in function 'talk_denna'
+	scripts/companion.lua:480: in function 'callback'
+	scripts/multi_events.lua:67: in function <scripts/multi_events.lua:66>

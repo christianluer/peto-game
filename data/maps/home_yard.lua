@@ -23,8 +23,6 @@ function map:on_started()
     sol.audio.play_music("eduardo/village")
   end
 
-  -- The dirt path south of the cottage door. Walk off the bottom of it.
-  -- This runs before the swordsmen so a spawn error cannot remove the exit.
   local _, map_height = map:get_size()
   if map:get_entity("from_fair") == nil then
     map:create_destination({
@@ -35,16 +33,24 @@ function map:on_started()
       direction = 1,
     })
   end
-  map:create_teletransporter({
-    layer = 0,
-    x = 240,
-    y = map_height - 16,
-    width = 32,
-    height = 16,
-    destination_map = "fair_carriages",
-    destination = "from_yard",
-    transition = "fade",
-  })
+
+  local fair_open = false
+  local function try_open_fair()
+    if fair_open or map:get_entities_count("yard_swordsman") > 0 then
+      return
+    end
+    fair_open = true
+    map:create_teletransporter({
+      layer = 0,
+      x = 240,
+      y = map_height - 16,
+      width = 32,
+      height = 16,
+      destination_map = "fair_carriages",
+      destination = "from_yard",
+      transition = "fade",
+    })
+  end
 
   local spots, y = south_spots(map)
   local count = math.random(1, 3)
@@ -59,7 +65,14 @@ function map:on_started()
       layer = 0,
       direction = 3,
     })
+    local enemy = map:get_entity("yard_swordsman_" .. i)
+    if enemy ~= nil then
+      function enemy:on_dead()
+        try_open_fair()
+      end
+    end
   end
+  try_open_fair()
 end
 
 function map:on_opening_transition_finished()

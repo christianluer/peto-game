@@ -17,8 +17,8 @@ Open the quest in Solarus Quest Editor with File > Load Quest and choose this re
 
 - `data/quest.dat`: title, author, version, screen size. Savegames use the write dir `peto`.
 - `data/main.lua`: startup, window size, fullscreen keys.
-- `data/maps/first_map.dat`: the cottage where a new game starts (house tileset). The south door fades to `home_yard`.
-- `data/maps/home_yard.dat`: the grass outside that door (outside tileset). Christian has painted this map in the editor. Add yard behavior in `home_yard.lua`, not by rewriting the tile data. The south end of the dirt path fades to `fair_carriages`.
+- `data/maps/first_map.dat`: the cottage where a new game starts (house tileset). The south door fades to `home_yard` only after the poem and Denna's fixed reply. Stand in the top-left corner and press **F** to read the poem.
+- `data/maps/home_yard.dat`: the grass outside that door (outside tileset). Christian has painted this map in the editor. Add yard behavior in `home_yard.lua`, not by rewriting the tile data. The south end of the dirt path fades to `fair_carriages` after every yard swordsman on that visit is dead.
 - `data/maps/fair_carriages.dat`: a draft fair road with three carriages. Arliden, Laurian, Trip, Teren, and Shandi each have one fixed line in `dialogs.dat`. Face the nearest of them and press **F**. Calder, a draft name, opens the chat on **F** instead of a fixed line. **F** is the talk key for Denna too. The nearest person speaks. He does not follow. Walk west to return to the yard. The mailbox adds a character key, `denna` or `teacher`, so the bridge uses that person's prompt.
 - `data/languages/en/text/`: English dialogue (`dialogs.dat`) and UI strings (`strings.dat`).
 - `data/scripts/`: menus, HUD, magic, companion, game startup.
