@@ -30,7 +30,18 @@ Solarus 2 is the engine. Homebrew's current build is 2.1.4, and `data/quest.dat`
 
 Quest metadata lives in `data/quest.dat`. The screen size is 320×240. Folder roles are listed in `docs/game.md`.
 
-A dialogue or plot rewrite should stay in language files and map scripts. Leave movement, HUD, and item systems alone unless the design change requires it.
+A dialogue or plot rewrite should stay in language files and map scripts. Leave movement, the HUD, magic, the companion, and item systems alone unless the design change requires it.
+
+## Systems already in play
+
+These are playable drafts, not story canon. Details and file names are in `docs/game.md`.
+
+- **C** slashes. Holding **C** charges a spin that spends magic.
+- **V** fires the equipped spell. Only water is unlocked. Fire, thunder, and ice stay locked until a quest unlocks them. Do not cycle spells on **V**.
+- The cottage is `first_map`. The yard is `home_yard`. Christian edits those maps in Solarus Quest Editor. Do not rewrite a map file to add one entity; spawn behavior from the map script or a system script.
+- A companion follows the hero and opens a chat with **F** or the action key. She does not fight and is not an enemy. Her name is still a placeholder. Ollama is not connected: `data/scripts/companion_llm.lua` is the only place that may call that server.
+- Yard swordsmen are normal enemies. The hero's slash and their sword use the same life-point cost.
+- Kit sprites, including the character sheet in `character-catalog/`, are for picking art. Do not treat a sprite name as a story character until Christian says so.
 
 ## Story
 

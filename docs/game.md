@@ -17,13 +17,35 @@ Open the quest in Solarus Quest Editor with File > Load Quest and choose this re
 
 - `data/quest.dat`: title, author, version, screen size. Savegames use the write dir `peto`.
 - `data/main.lua`: startup, window size, fullscreen keys.
-- `data/maps/first_map.dat`: the cottage where a new game starts. `home_yard.dat` is the grass outside its door.
+- `data/maps/first_map.dat`: the cottage where a new game starts (house tileset). The south door fades to `home_yard`.
+- `data/maps/home_yard.dat`: the grass outside that door (outside tileset). Christian has painted this map in the editor. Add yard behavior in `home_yard.lua`, not by rewriting the tile data.
 - `data/languages/en/text/`: English dialogue (`dialogs.dat`) and UI strings (`strings.dat`).
-- `data/scripts/`: menus, HUD, game startup.
+- `data/scripts/`: menus, HUD, magic, companion, game startup.
 - `data/items/`, `data/enemies/`, `data/entities/`: behavior.
-- `data/sprites/`, `data/tilesets/`, `data/sounds/`, `data/musics/`: art and audio.
+- `data/sprites/`, `data/tilesets/`, `data/sounds/`, `data/musics/`: art and audio. Extra tilesets from the free resource pack include `zoria`, `zane_desert`, `zane_forest`, `eod_cave`, and `eod_temple`.
+- `character-catalog/characters.png` and `characters.zip`: one front frame per hero, villager, enemy, boss, and animal sprite, for choosing art. Not canon.
 
-Story changes belong in language files and map scripts. Leave movement, the HUD, and item systems alone unless the design change requires it.
+Story changes belong in language files and map scripts. Leave movement, the HUD, magic, the companion, and item systems alone unless the design change requires it.
+
+## Play
+
+| Input | What it does |
+|---|---|
+| Arrows | Walk |
+| **C** | Sword slash. Hold, then release, for a spin if the magic bar has at least 12 points. The spin spends 12. |
+| **V** | Equipped spell. Spends 8 magic. The shot flies 290 pixels. |
+| **F** or the action key | Talk to the companion when she is within 48 pixels. |
+| Enter / Escape | Send a chat line, or close the chat. |
+
+A full heart is 4 life points. The hero starts with 12, which is 3 hearts. Sword level 1 removes 1 life point. The magic bar holds 84 and refills on its own outside a charge or a spin.
+
+**V** is water only. The spell list and the unlock checks live in `data/scripts/magic_shot.lua`. A later menu can equip a spell only after `unlock()` has been called for it. Do not put the cycle back on the key.
+
+The companion is an NPC, so swords and spells do not hit her and she does not attack. She follows until she is 5 tiles (80 pixels) away, then stops. The chat panel is `data/scripts/companion.lua`. Replies come from `data/scripts/companion_llm.lua`. `base_url` is empty, so she answers "I can't hear you." That file is the only place that should call Ollama. Her display name and the woman type 1 sprite are placeholders.
+
+NPCs use `set_traversable(true)`. This Solarus build has no `set_traversable_by`. Map scripts already define `map:on_started`, so a listener on the map metatable for that event does not run. Spawn something on every map from `game` `on_map_changed`.
+
+Each visit to the yard spawns 1, 2, or 3 `yard_swordsman` enemies along the south edge. They notice the hero at 230 pixels, then walk in. The sword hurts only at melee range, for the same 1 life point as the hero's slash. They have 4 life.
 
 ## Licenses
 
