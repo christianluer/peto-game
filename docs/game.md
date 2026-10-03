@@ -41,7 +41,9 @@ A full heart is 4 life points. The hero starts with 12, which is 3 hearts. Sword
 
 **V** is water only. The spell list and the unlock checks live in `data/scripts/magic_shot.lua`. A later menu can equip a spell only after `unlock()` has been called for it. Do not put the cycle back on the key.
 
-The companion is an NPC, so swords and spells do not hit her and she does not attack. She follows until she is 5 tiles (80 pixels) away, then stops. The chat panel is `data/scripts/companion.lua`. Replies come from `data/scripts/companion_llm.lua`. `base_url` is empty, so she answers "I can't hear you." That file is the only place that should call Ollama. Her display name and the woman type 1 sprite are placeholders.
+The companion is an NPC, so swords and spells do not hit her and she does not attack. She follows until she is 5 tiles (80 pixels) away, then stops. The chat panel is `data/scripts/companion.lua`. Replies come from `data/scripts/companion_llm.lua`. That script writes `companion_request.txt` in the Solarus write directory (`~/Library/Application Support/Solarus/peto/`) and polls `companion_reply.txt`. It does not open HTTP. If no reply arrives, she says "I can't hear you." Her display name and the woman type 1 sprite are placeholders.
+
+Ollama and the model weights stay outside this repo, in `~/.ollama`. The model is `llama3.2:3b`. The process that talks to `http://127.0.0.1:11434` is `bridge.py` in the sibling repo `ollama-peto-game`. Do not commit model weights into either repo. Start Ollama, run `python3 "../ollama-peto-game/bridge.py"`, then `make start`.
 
 NPCs use `set_traversable(true)`. This Solarus build has no `set_traversable_by`. Map scripts already define `map:on_started`, so a listener on the map metatable for that event does not run. Spawn something on every map from `game` `on_map_changed`.
 

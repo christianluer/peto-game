@@ -39,7 +39,7 @@ These are playable drafts, not story canon. Details and file names are in `docs/
 - **C** slashes. Holding **C** charges a spin that spends magic.
 - **V** fires the equipped spell. Only water is unlocked. Fire, thunder, and ice stay locked until a quest unlocks them. Do not cycle spells on **V**.
 - The cottage is `first_map`. The yard is `home_yard`. Christian edits those maps in Solarus Quest Editor. Do not rewrite a map file to add one entity; spawn behavior from the map script or a system script.
-- A companion follows the hero and opens a chat with **F** or the action key. She does not fight and is not an enemy. Her name is still a placeholder. Ollama is not connected: `data/scripts/companion_llm.lua` is the only place that may call that server.
+- A companion follows the hero and opens a chat with **F** or the action key. She does not fight and is not an enemy. Her name is still a placeholder. The quest only reads and writes the two mailbox files. Ollama weights stay in `~/.ollama`. The bridge is the sibling repo `ollama-peto-game`. Do not commit model weights into either repo.
 - Yard swordsmen are normal enemies. The hero's slash and their sword use the same life-point cost.
 - Kit sprites, including the character sheet in `character-catalog/`, are for picking art. Do not treat a sprite name as a story character until Christian says so.
 

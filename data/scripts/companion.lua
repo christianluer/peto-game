@@ -1,5 +1,5 @@
 -- A companion who follows the hero, never fights, and opens a chat.
--- The name "Companion" is a placeholder until Christian picks one.
+-- The name Denna is a draft Christian asked for, in the manner of that lover.
 -- Press the action key while facing them to talk.
 
 local companion_llm = require("scripts/companion_llm")
@@ -12,10 +12,25 @@ local FOLLOW_SPEED = 64
 -- Usual talk reach is 32 pixels. This is that reach, half again as wide.
 local TALK_RANGE = 48
 local MAX_INPUT = 72
-local CHARS_PER_LINE = 26
+local PANEL_W = 320
+local PANEL_H = 200
+local PANEL_Y = 32
+local TEXT_W = PANEL_W - 16
+local LINE_H = 16
+local INPUT_Y = PANEL_H - 22
+local VISIBLE_LINES = math.floor((INPUT_Y - 8) / LINE_H)
 
 local chat_menu = {}
 local chat_open = false
+
+local function text_width(text)
+  local surface = sol.text_surface.create({
+    font = "enter_command",
+    font_size = 16,
+    text = text,
+  })
+  return surface:get_size()
+end
 
 local function wrap_line(speaker, text)
   local prefix = speaker .. ": "
@@ -30,15 +45,33 @@ local function wrap_line(speaker, text)
   local current = prefix
   for _, word in ipairs(words) do
     local trial = current == prefix and (prefix .. word) or (current .. " " .. word)
-    if #trial <= CHARS_PER_LINE then
+    if text_width(trial) <= TEXT_W then
       current = trial
     else
-      lines[#lines + 1] = current
+      if current ~= "" then
+        lines[#lines + 1] = current
+      end
       current = word
+      while text_width(current) > TEXT_W and #current > 1 do
+        local cut = current
+        while text_width(cut) > TEXT_W and #cut > 1 do
+          cut = cut:sub(1, -2)
+        end
+        lines[#lines + 1] = cut
+        current = current:sub(#cut + 1)
+      end
     end
   end
   lines[#lines + 1] = current
   return lines
+end
+
+local function fit_tail(text)
+  local shown = text
+  while text_width(shown) > TEXT_W and #shown > 1 do
+    shown = shown:sub(2)
+  end
+  return shown
 end
 
 local function push_message(game, speaker, text)
@@ -46,9 +79,10 @@ local function push_message(game, speaker, text)
   for _, line in ipairs(wrap_line(speaker, text)) do
     shown[#shown + 1] = line
   end
-  while #shown > 40 do
+  while #shown > 80 do
     table.remove(shown, 1)
   end
+  chat_menu.scroll = nil
 end
 
 function chat_menu:on_started()
@@ -58,7 +92,7 @@ function chat_menu:on_started()
   self.waiting = false
   if self.game._companion_lines == nil then
     self.game._companion_lines = {}
-    push_message(self.game, "Companion", "Talk to me. Enter sends, escape closes.")
+    push_message(self.game, "Denna", "There you are. I was beginning to think you'd forgotten my name.")
   end
 end
 
@@ -67,19 +101,42 @@ function chat_menu:on_finished()
   self.game:set_suspended(false)
 end
 
-function chat_menu:on_draw(dst)
-  local panel = sol.surface.create(304, 96)
-  panel:fill_color({ 20, 16, 28, 230 })
+function chat_menu:line_window()
   local lines = self.game._companion_lines or {}
-  local start_at = math.max(1, #lines - 2)
-  for i = start_at, #lines do
+  local max_start = math.max(1, #lines - VISIBLE_LINES + 1)
+  local start_at = self.scroll or max_start
+  if start_at < 1 then
+    start_at = 1
+  end
+  if start_at > max_start then
+    start_at = max_start
+  end
+  return lines, start_at, max_start
+end
+
+function chat_menu:scroll_by(delta)
+  local _, start_at, max_start = self:line_window()
+  start_at = start_at + delta
+  if start_at >= max_start then
+    self.scroll = nil
+  else
+    self.scroll = math.max(1, start_at)
+  end
+end
+
+function chat_menu:on_draw(dst)
+  local panel = sol.surface.create(PANEL_W, PANEL_H)
+  panel:fill_color({ 20, 16, 28, 230 })
+  local lines, start_at = self:line_window()
+  local last = math.min(#lines, start_at + VISIBLE_LINES - 1)
+  for i = start_at, last do
     local surface = sol.text_surface.create({
       font = "enter_command",
       font_size = 16,
       color = { 240, 224, 190 },
       text = lines[i],
     })
-    surface:draw(panel, 6, 4 + (i - start_at) * 16)
+    surface:draw(panel, 6, 4 + (i - start_at) * LINE_H)
   end
   local prompt = "> " .. (self.input or "")
   if self.waiting then
@@ -89,10 +146,10 @@ function chat_menu:on_draw(dst)
     font = "enter_command",
     font_size = 16,
     color = { 255, 255, 255 },
-    text = prompt:sub(1, CHARS_PER_LINE),
+    text = fit_tail(prompt),
   })
-  input_surface:draw(panel, 6, 72)
-  panel:draw(dst, 8, 136)
+  input_surface:draw(panel, 6, INPUT_Y)
+  panel:draw(dst, 0, PANEL_Y)
 end
 
 function chat_menu:submit()
@@ -104,7 +161,7 @@ function chat_menu:submit()
   self.waiting = true
   push_message(self.game, "You", text)
   companion_llm:reply(text, self.game._companion_lines, function(answer)
-    push_message(self.game, "Companion", answer)
+    push_message(self.game, "Denna", answer)
     self.waiting = false
   end)
 end
@@ -128,6 +185,14 @@ function chat_menu:on_key_pressed(key)
   end
   if key == "backspace" then
     self.input = self.input:sub(1, -2)
+    return true
+  end
+  if key == "up" then
+    self:scroll_by(-1)
+    return true
+  end
+  if key == "down" then
+    self:scroll_by(1)
     return true
   end
   return true
