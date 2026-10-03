@@ -1,16 +1,16 @@
 -- Draft scenery. Carriages at a fair.
--- Calder opens the chat on G. The troupe says one fixed line each on G.
+-- Calder opens the chat on F. The troupe says one fixed line each on F.
 -- Arliden and Laurian are the parents. Trip, Teren, and Shandi are the friends.
 
 local map = ...
 
 local people = {
   { name = "fair_teacher", sprite = "npc/old_man", x = 200, y = 248, direction = 0, chat_who = { key = "teacher", label = "Calder" } },
-  { name = "fair_arliden", sprite = "npc/green_hat_man", x = 272, y = 224, direction = 2, dialog_id = "fair.arliden" },
-  { name = "fair_laurian", sprite = "npc/blonde_woman", x = 272, y = 272, direction = 2, dialog_id = "fair.laurian" },
-  { name = "fair_trip", sprite = "npc/red_hood_man", x = 328, y = 208, direction = 2, dialog_id = "fair.trip" },
-  { name = "fair_teren", sprite = "npc/blue_haired_boy", x = 328, y = 288, direction = 2, dialog_id = "fair.teren" },
-  { name = "fair_shandi", sprite = "npc/bun_woman", x = 376, y = 248, direction = 2, dialog_id = "fair.shandi" },
+  { name = "fair_arliden", sprite = "npc/green_hat_man", x = 272, y = 224, direction = 2, line = "Keep the song in your mouth, not on the paper. The road listens harder than any crowd." },
+  { name = "fair_laurian", sprite = "npc/blonde_woman", x = 272, y = 272, direction = 2, line = "Stay where I can see you. A fair is a kind place until it isn't." },
+  { name = "fair_trip", sprite = "npc/red_hood_man", x = 328, y = 208, direction = 2, line = "If they laugh, bow. If they don't, bow anyway. That's the whole trick." },
+  { name = "fair_teren", sprite = "npc/blue_haired_boy", x = 328, y = 288, direction = 2, line = "The wagons are hitched. We leave when the song is finished, not before." },
+  { name = "fair_shandi", sprite = "npc/bun_woman", x = 376, y = 248, direction = 2, line = "Don't wander past the last carriage. That's where the fair ends." },
 }
 
 function map:on_started()
@@ -32,7 +32,7 @@ function map:on_started()
     function npc:on_interaction()
     end
     npc.chat_who = person.chat_who
-    npc.dialog_id = person.dialog_id
+    npc.line = person.line
   end
 
   map:create_teletransporter({

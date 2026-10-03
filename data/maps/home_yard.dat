@@ -1749,6 +1749,14 @@ destination{
   direction = 3,
 }
 
+destination{
+  name = "from_fair",
+  layer = 0,
+  x = 256,
+  y = 336,
+  direction = 1,
+}
+
 teletransporter{
   layer = 0,
   x = 248,

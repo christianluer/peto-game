@@ -19,7 +19,7 @@ Open the quest in Solarus Quest Editor with File > Load Quest and choose this re
 - `data/main.lua`: startup, window size, fullscreen keys.
 - `data/maps/first_map.dat`: the cottage where a new game starts (house tileset). The south door fades to `home_yard`.
 - `data/maps/home_yard.dat`: the grass outside that door (outside tileset). Christian has painted this map in the editor. Add yard behavior in `home_yard.lua`, not by rewriting the tile data. The south end of the dirt path fades to `fair_carriages`.
-- `data/maps/fair_carriages.dat`: a draft fair road with three carriages. Arliden, Laurian, Trip, Teren, and Shandi each have one fixed line in `dialogs.dat`. Face the nearest of them and press **G**. Calder, a draft name, opens the chat on **G** instead. **F** stays Denna. He does not follow. Walk west to return to the yard. The mailbox adds a character key, `denna` or `teacher`, so the bridge uses that person's prompt.
+- `data/maps/fair_carriages.dat`: a draft fair road with three carriages. Arliden, Laurian, Trip, Teren, and Shandi each have one fixed line in `dialogs.dat`. Face the nearest of them and press **F**. Calder, a draft name, opens the chat on **F** instead of a fixed line. **F** is the talk key for Denna too. The nearest person speaks. He does not follow. Walk west to return to the yard. The mailbox adds a character key, `denna` or `teacher`, so the bridge uses that person's prompt.
 - `data/languages/en/text/`: English dialogue (`dialogs.dat`) and UI strings (`strings.dat`).
 - `data/scripts/`: menus, HUD, magic, companion, game startup.
 - `data/items/`, `data/enemies/`, `data/entities/`: behavior.
@@ -35,7 +35,7 @@ Story changes belong in language files and map scripts. Leave movement, the HUD,
 | Arrows | Walk |
 | **C** | Sword slash. Hold, then release, for a spin if the magic bar has at least 12 points. The spin spends 12. |
 | **V** | Equipped spell. Spends 8 magic. The shot flies 290 pixels. |
-| **F** or the action key | Talk to the companion when she is within 48 pixels. |
+| **F** | Talk to the nearest person within 48 pixels. Denna and Calder open a chat. The troupe shows a short line. |
 | Enter / Escape | Send a chat line, or close the chat. |
 
 A full heart is 4 life points. The hero starts with 12, which is 3 hearts. Sword level 1 removes 1 life point. The magic bar holds 84 and refills on its own outside a charge or a spin.

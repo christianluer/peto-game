@@ -915,7 +915,7 @@ tile{
 destination{
   name = "from_yard",
   layer = 0,
-  x = 32,
+  x = 96,
   y = 192,
   direction = 0,
 }

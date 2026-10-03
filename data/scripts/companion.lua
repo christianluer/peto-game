@@ -22,6 +22,83 @@ local VISIBLE_LINES = math.floor((INPUT_Y - 8) / LINE_H)
 
 local chat_menu = {}
 local chat_open = false
+local bubble = nil
+local bubble_menu = {}
+
+local function wrap_words(text, limit)
+  local lines = {}
+  local current = ""
+  for word in text:gmatch("%S+") do
+    local trial = current == "" and word or (current .. " " .. word)
+    if #trial <= limit then
+      current = trial
+    else
+      if current ~= "" then
+        lines[#lines + 1] = current
+      end
+      current = word
+    end
+  end
+  if current ~= "" then
+    lines[#lines + 1] = current
+  end
+  return lines
+end
+
+local function show_line(npc)
+  bubble = {
+    npc = npc,
+    lines = wrap_words(npc.line, 18),
+    until_ms = sol.main.get_elapsed_time() + 4500,
+  }
+end
+
+function bubble_menu:on_draw(dst)
+  if bubble == nil then
+    return
+  end
+  local npc = bubble.npc
+  if npc == nil or not npc:exists() then
+    bubble = nil
+    return
+  end
+  local map = npc:get_map()
+  if map == nil or sol.main.get_elapsed_time() > bubble.until_ms then
+    bubble = nil
+    return
+  end
+  local camera = map:get_camera()
+  if camera == nil then
+    return
+  end
+  local cam_x, cam_y = camera:get_position()
+  local nx, ny = npc:get_position()
+  local width = 220
+  local height = 8 + #bubble.lines * 16
+  local panel = sol.surface.create(width, height)
+  panel:fill_color({ 20, 16, 28, 230 })
+  for i, line in ipairs(bubble.lines) do
+    local surface = sol.text_surface.create({
+      font = "enter_command",
+      font_size = 16,
+      color = { 240, 224, 190 },
+      text = line,
+    })
+    surface:draw(panel, 6, 4 + (i - 1) * 16)
+  end
+  local screen_x = math.floor(nx - cam_x - width / 2)
+  local screen_y = math.floor(ny - cam_y - 36 - height)
+  if screen_x < 4 then
+    screen_x = 4
+  end
+  if screen_x + width > 316 then
+    screen_x = 316 - width
+  end
+  if screen_y < 4 then
+    screen_y = 4
+  end
+  panel:draw(dst, screen_x, screen_y)
+end
 
 local function text_width(text)
   local surface = sol.text_surface.create({
@@ -223,19 +300,6 @@ function chat_menu:on_command_pressed(command)
   return true
 end
 
-local function companion_in_range(game)
-  local map = game:get_map()
-  if map == nil then
-    return false
-  end
-  local npc = map:get_entity("companion")
-  local hero = map:get_hero()
-  if npc == nil or hero == nil then
-    return false
-  end
-  return npc:get_distance(hero) <= TALK_RANGE
-end
-
 local function nearby_other(game)
   local map = game:get_map()
   if map == nil then
@@ -248,7 +312,7 @@ local function nearby_other(game)
   local nearest = nil
   local nearest_distance = nil
   for npc in map:get_entities_by_type("npc") do
-    if npc.chat_who ~= nil or npc.dialog_id ~= nil then
+    if npc.chat_who ~= nil or npc.line ~= nil then
       local distance = npc:get_distance(hero)
       if distance <= TALK_RANGE and (nearest_distance == nil or distance < nearest_distance) then
         nearest = npc
@@ -318,6 +382,7 @@ local function attach(map)
   if npc == nil then
     return
   end
+  npc.chat_who = { key = "denna", label = "Denna" }
   npc:set_traversable(true)
   function npc:on_movement_changed(movement)
     local direction = movement:get_direction4()
@@ -343,26 +408,19 @@ game_meta:register_event("on_key_pressed", function(game, key)
     return false
   end
   -- Swallow the key so "f" is not typed into the prompt.
-  return companion_in_range(game)
-end)
-
-game_meta:register_event("on_key_pressed", function(game, key)
-  if key ~= "g" or chat_open or game:is_suspended() then
-    return false
-  end
   return nearby_other(game) ~= nil
 end)
 
 game_meta:register_event("on_key_released", function(game, key)
-  if key ~= "g" or chat_open or game:is_suspended() then
+  if key ~= "f" or chat_open or game:is_suspended() then
     return false
   end
   local npc = nearby_other(game)
   if npc == nil then
     return false
   end
-  if npc.dialog_id ~= nil then
-    game:start_dialog(npc.dialog_id)
+  if npc.line ~= nil then
+    show_line(npc)
     return true
   end
   if npc.chat_who ~= nil then
@@ -372,15 +430,9 @@ game_meta:register_event("on_key_released", function(game, key)
   return false
 end)
 
-game_meta:register_event("on_key_released", function(game, key)
-  if key ~= "f" or chat_open or game:is_suspended() then
-    return false
-  end
-  if companion_in_range(game) then
-    open_chat(game)
-    return true
-  end
-  return false
+game_meta:register_event("on_started", function(game)
+  bubble_menu.game = game
+  sol.menu.start(game, bubble_menu)
 end)
 
 game_meta:register_event("on_map_changed", function(game, map)
