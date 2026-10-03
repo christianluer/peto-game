@@ -6,7 +6,7 @@ properties{
   min_layer = 0,
   max_layer = 2,
   tileset = "outside",
-  music = "eduardo/overworld",
+  music = "eduardo/witch_hut",
 }
 
 tile{
@@ -915,7 +915,7 @@ tile{
 destination{
   name = "from_yard",
   layer = 0,
-  x = 96,
+  x = 32,
   y = 192,
   direction = 0,
 }
