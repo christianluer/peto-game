@@ -13,7 +13,10 @@ local REQUEST = "companion_request.txt"
 local REPLY = "companion_reply.txt"
 local POLL_MS = 200
 local TIMEOUT_MS = 45000
-local HEAR_YOU = "I can't hear you."
+local FALLBACK = {
+  denna = "Say that again. I was looking at you, not listening.",
+  teacher = "Quiet. I was listening for a name, not for you.",
+}
 
 local function finish(callback, text)
   if sol.file.exists(REPLY) then
@@ -22,7 +25,7 @@ local function finish(callback, text)
   callback(text)
 end
 
-function companion_llm:reply(message, history, callback)
+function companion_llm:reply(message, history, callback, character)
   if sol.file.exists(REQUEST) then
     sol.file.remove(REQUEST)
   end
@@ -30,13 +33,19 @@ function companion_llm:reply(message, history, callback)
     sol.file.remove(REPLY)
   end
 
+  local key = character or "denna"
+  if FALLBACK[key] == nil then
+    key = "denna"
+  end
+  local missed = FALLBACK[key]
   local id = tostring(sol.main.get_elapsed_time())
   local file = sol.file.open(REQUEST, "w")
   if file == nil then
-    callback(HEAR_YOU)
+    callback(missed)
     return
   end
-  file:write(id .. "\n" .. message)
+  local line = message:gsub("[\r\n]", " ")
+  file:write(id .. "\n" .. line .. "\n" .. key)
   file:close()
 
   local waited = 0
@@ -44,7 +53,7 @@ function companion_llm:reply(message, history, callback)
     waited = waited + POLL_MS
     if not sol.file.exists(REPLY) then
       if waited >= TIMEOUT_MS then
-        finish(callback, HEAR_YOU)
+        finish(callback, missed)
         return false
       end
       return true
@@ -62,7 +71,7 @@ function companion_llm:reply(message, history, callback)
     end
     body = body:gsub("^%s+", ""):gsub("%s+$", "")
     if body == "" then
-      body = HEAR_YOU
+      body = missed
     end
     finish(callback, body)
     return false

@@ -74,8 +74,19 @@ local function fit_tail(text)
   return shown
 end
 
+local function lines_for(game)
+  local key = chat_menu.who and chat_menu.who.key or "denna"
+  if game._chat_lines == nil then
+    game._chat_lines = {}
+  end
+  if game._chat_lines[key] == nil then
+    game._chat_lines[key] = {}
+  end
+  return game._chat_lines[key]
+end
+
 local function push_message(game, speaker, text)
-  local shown = game._companion_lines
+  local shown = lines_for(game)
   for _, line in ipairs(wrap_line(speaker, text)) do
     shown[#shown + 1] = line
   end
@@ -90,9 +101,15 @@ function chat_menu:on_started()
   self.game:set_suspended(true)
   self.input = ""
   self.waiting = false
-  if self.game._companion_lines == nil then
-    self.game._companion_lines = {}
-    push_message(self.game, "Denna", "There you are. I was beginning to think you'd forgotten my name.")
+  local who = self.who or { key = "denna", label = "Denna" }
+  self.who = who
+  local shown = lines_for(self.game)
+  if #shown == 0 then
+    if who.key == "teacher" then
+      push_message(self.game, who.label, "Stand still. If you shout at the air, it will not answer.")
+    else
+      push_message(self.game, who.label, "There you are. I was beginning to think you'd forgotten my name.")
+    end
   end
 end
 
@@ -102,7 +119,7 @@ function chat_menu:on_finished()
 end
 
 function chat_menu:line_window()
-  local lines = self.game._companion_lines or {}
+  local lines = lines_for(self.game)
   local max_start = math.max(1, #lines - VISIBLE_LINES + 1)
   local start_at = self.scroll or max_start
   if start_at < 1 then
@@ -160,8 +177,9 @@ function chat_menu:submit()
   self.input = ""
   self.waiting = true
   push_message(self.game, "You", text)
-  companion_llm:reply(text, self.game._companion_lines, function(answer)
-    push_message(self.game, "Denna", answer)
+  local who = self.who or { key = "denna", label = "Denna" }
+  companion_llm:reply(text, lines_for(self.game), function(answer)
+    push_message(self.game, who.label, answer)
     self.waiting = false
   end)
 end
@@ -218,11 +236,12 @@ local function companion_in_range(game)
   return npc:get_distance(hero) <= TALK_RANGE
 end
 
-local function open_chat(game)
+local function open_chat(game, who)
   if chat_open then
     return
   end
   chat_menu.game = game
+  chat_menu.who = who or { key = "denna", label = "Denna" }
   sol.menu.start(game, chat_menu)
 end
 
@@ -320,3 +339,7 @@ game_meta:register_event("on_map_changed", function(game, map)
     attach(map)
   end)
 end)
+
+return {
+  open_chat = open_chat,
+}

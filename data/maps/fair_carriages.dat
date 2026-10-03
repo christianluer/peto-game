@@ -1,0 +1,117 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 640,
+  height = 384,
+  min_layer = 0,
+  max_layer = 2,
+  tileset = "outside",
+  music = "eduardo/overworld",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 0,
+  width = 640,
+  height = 384,
+  pattern = "Gnd_cut_grass",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 160,
+  width = 640,
+  height = 64,
+  pattern = "Gnd_sand",
+}
+
+tile{
+  layer = 0,
+  x = 48,
+  y = 72,
+  width = 96,
+  height = 8,
+  pattern = "house_woodenroof_middle_up",
+}
+
+tile{
+  layer = 0,
+  x = 144,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "house_woodenroof_right_up",
+}
+
+tile{
+  layer = 0,
+  x = 48,
+  y = 80,
+  width = 96,
+  height = 40,
+  pattern = "house_woodbright_center",
+}
+
+tile{
+  layer = 0,
+  x = 256,
+  y = 72,
+  width = 96,
+  height = 8,
+  pattern = "house_woodenroof_middle_up",
+}
+
+tile{
+  layer = 0,
+  x = 352,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "house_woodenroof_right_up",
+}
+
+tile{
+  layer = 0,
+  x = 256,
+  y = 80,
+  width = 96,
+  height = 40,
+  pattern = "house_woodbright_center",
+}
+
+tile{
+  layer = 0,
+  x = 464,
+  y = 72,
+  width = 96,
+  height = 8,
+  pattern = "house_woodenroof_middle_up",
+}
+
+tile{
+  layer = 0,
+  x = 560,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "house_woodenroof_right_up",
+}
+
+tile{
+  layer = 0,
+  x = 464,
+  y = 80,
+  width = 96,
+  height = 40,
+  pattern = "house_woodbright_center",
+}
+
+destination{
+  name = "from_yard",
+  layer = 0,
+  x = 32,
+  y = 192,
+  direction = 0,
+}

@@ -1,5 +1,6 @@
 map{ id = "first_map", description = "Cottage" }
 map{ id = "home_yard", description = "Cottage yard" }
+map{ id = "fair_carriages", description = "Fair carriages" }
 map{ id = "demo/start", description = "Start Map" }
 map{ id = "items/bow" }
 map{ id = "stealth/test1" }

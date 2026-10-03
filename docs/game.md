@@ -18,7 +18,8 @@ Open the quest in Solarus Quest Editor with File > Load Quest and choose this re
 - `data/quest.dat`: title, author, version, screen size. Savegames use the write dir `peto`.
 - `data/main.lua`: startup, window size, fullscreen keys.
 - `data/maps/first_map.dat`: the cottage where a new game starts (house tileset). The south door fades to `home_yard`.
-- `data/maps/home_yard.dat`: the grass outside that door (outside tileset). Christian has painted this map in the editor. Add yard behavior in `home_yard.lua`, not by rewriting the tile data.
+- `data/maps/home_yard.dat`: the grass outside that door (outside tileset). Christian has painted this map in the editor. Add yard behavior in `home_yard.lua`, not by rewriting the tile data. The east edge fades to `fair_carriages`.
+- `data/maps/fair_carriages.dat`: a draft fair road with three carriages. The family does not speak. The old man is Calder, a draft name. Face him and press the action key to talk. He does not follow. Walk west to return to the yard. The mailbox adds a character key, `denna` or `teacher`, so the bridge uses that person's prompt.
 - `data/languages/en/text/`: English dialogue (`dialogs.dat`) and UI strings (`strings.dat`).
 - `data/scripts/`: menus, HUD, magic, companion, game startup.
 - `data/items/`, `data/enemies/`, `data/entities/`: behavior.
