@@ -236,6 +236,29 @@ local function companion_in_range(game)
   return npc:get_distance(hero) <= TALK_RANGE
 end
 
+local function nearby_other(game)
+  local map = game:get_map()
+  if map == nil then
+    return nil
+  end
+  local hero = map:get_hero()
+  if hero == nil then
+    return nil
+  end
+  local nearest = nil
+  local nearest_distance = nil
+  for npc in map:get_entities_by_type("npc") do
+    if npc.chat_who ~= nil or npc.dialog_id ~= nil then
+      local distance = npc:get_distance(hero)
+      if distance <= TALK_RANGE and (nearest_distance == nil or distance < nearest_distance) then
+        nearest = npc
+        nearest_distance = distance
+      end
+    end
+  end
+  return nearest
+end
+
 local function open_chat(game, who)
   if chat_open then
     return
@@ -321,6 +344,32 @@ game_meta:register_event("on_key_pressed", function(game, key)
   end
   -- Swallow the key so "f" is not typed into the prompt.
   return companion_in_range(game)
+end)
+
+game_meta:register_event("on_key_pressed", function(game, key)
+  if key ~= "g" or chat_open or game:is_suspended() then
+    return false
+  end
+  return nearby_other(game) ~= nil
+end)
+
+game_meta:register_event("on_key_released", function(game, key)
+  if key ~= "g" or chat_open or game:is_suspended() then
+    return false
+  end
+  local npc = nearby_other(game)
+  if npc == nil then
+    return false
+  end
+  if npc.dialog_id ~= nil then
+    game:start_dialog(npc.dialog_id)
+    return true
+  end
+  if npc.chat_who ~= nil then
+    open_chat(game, npc.chat_who)
+    return true
+  end
+  return false
 end)
 
 game_meta:register_event("on_key_released", function(game, key)

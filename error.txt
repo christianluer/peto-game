@@ -1,15 +1,2 @@
-[Solarus] [2740] Error: In timer callback: scripts/companion.lua:214: attempt to call method 'set_traversable_by' (a nil value)
-stack traceback:
-	[C]: in function 'set_traversable_by'
-	scripts/companion.lua:214: in function 'attach'
-	scripts/companion.lua:255: in function <scripts/companion.lua:254>
-[Solarus] [28880] Error: In timer callback: scripts/companion.lua:214: attempt to call method 'set_traversable_by' (a nil value)
-stack traceback:
-	[C]: in function 'set_traversable_by'
-	scripts/companion.lua:214: in function 'attach'
-	scripts/companion.lua:255: in function <scripts/companion.lua:254>
-[Solarus] [51650] Error: In timer callback: scripts/companion.lua:214: attempt to call method 'set_traversable_by' (a nil value)
-stack traceback:
-	[C]: in function 'set_traversable_by'
-	scripts/companion.lua:214: in function 'attach'
-	scripts/companion.lua:255: in function <scripts/companion.lua:254>
+[Solarus] [104710] Error: Map 'home_yard': No such destination: 'from_fair'
+[Solarus] [104710] Error: Map 'home_yard': No such destination: 'from_fair'

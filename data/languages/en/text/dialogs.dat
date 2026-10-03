@@ -1,4 +1,44 @@
 dialog{
+  id = "fair.arliden",
+  text = [[
+Keep the song in your mouth, not on the paper.
+The road listens harder than any crowd.
+]],
+}
+
+dialog{
+  id = "fair.laurian",
+  text = [[
+Stay where I can see you.
+A fair is a kind place until it isn't.
+]],
+}
+
+dialog{
+  id = "fair.trip",
+  text = [[
+If they laugh, bow. If they don't, bow anyway.
+That's the whole trick.
+]],
+}
+
+dialog{
+  id = "fair.teren",
+  text = [[
+The wagons are hitched. We leave when
+the song is finished, not before.
+]],
+}
+
+dialog{
+  id = "fair.shandi",
+  text = [[
+Don't wander past the last carriage.
+That's where the fair ends.
+]],
+}
+
+dialog{
   id = "demo.start_dialog",
   text = [[
 Welcome to the Knight Demo Game!

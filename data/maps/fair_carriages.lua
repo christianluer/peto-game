@@ -1,22 +1,17 @@
--- Draft scenery. Carriages at a fair, a family, and an old man.
--- Nobody speaks yet.
+-- Draft scenery. Carriages at a fair.
+-- Calder opens the chat on G. The troupe says one fixed line each on G.
+-- Arliden and Laurian are the parents. Trip, Teren, and Shandi are the friends.
 
 local map = ...
 
 local people = {
-  { name = "fair_teacher", sprite = "npc/old_man", x = 200, y = 248, direction = 0 },
-  { name = "fair_father", sprite = "npc/green_hat_man", x = 272, y = 224, direction = 2 },
-  { name = "fair_mother", sprite = "npc/blonde_woman", x = 272, y = 272, direction = 2 },
-  { name = "fair_son", sprite = "npc/blond_boy", x = 320, y = 216, direction = 2 },
-  { name = "fair_child", sprite = "npc/blue_haired_boy", x = 320, y = 280, direction = 2 },
-  { name = "fair_aunt", sprite = "npc/bun_woman", x = 368, y = 248, direction = 2 },
+  { name = "fair_teacher", sprite = "npc/old_man", x = 200, y = 248, direction = 0, chat_who = { key = "teacher", label = "Calder" } },
+  { name = "fair_arliden", sprite = "npc/green_hat_man", x = 272, y = 224, direction = 2, dialog_id = "fair.arliden" },
+  { name = "fair_laurian", sprite = "npc/blonde_woman", x = 272, y = 272, direction = 2, dialog_id = "fair.laurian" },
+  { name = "fair_trip", sprite = "npc/red_hood_man", x = 328, y = 208, direction = 2, dialog_id = "fair.trip" },
+  { name = "fair_teren", sprite = "npc/blue_haired_boy", x = 328, y = 288, direction = 2, dialog_id = "fair.teren" },
+  { name = "fair_shandi", sprite = "npc/bun_woman", x = 376, y = 248, direction = 2, dialog_id = "fair.shandi" },
 }
-
-local function silent(npc)
-  npc:set_traversable(true)
-  function npc:on_interaction()
-  end
-end
 
 function map:on_started()
   if sol.audio.get_music() ~= "eduardo/overworld" then
@@ -33,14 +28,11 @@ function map:on_started()
       subtype = 1,
       sprite = person.sprite,
     })
-    if person.name == "fair_teacher" then
-      npc:set_traversable(true)
-      function npc:on_interaction()
-        companion.open_chat(map:get_game(), { key = "teacher", label = "Calder" })
-      end
-    else
-      silent(npc)
+    npc:set_traversable(true)
+    function npc:on_interaction()
     end
+    npc.chat_who = person.chat_who
+    npc.dialog_id = person.dialog_id
   end
 
   map:create_teletransporter({
