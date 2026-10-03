@@ -3,22 +3,19 @@
 
 local map = ...
 
-local function find_south_spawn(map)
+local function south_spots(map)
   local map_width, map_height = map:get_size()
   local y = map_height - 32
-  local x = math.floor(map_width / 2 / 8) * 8
-  if map:get_ground(x, y, 0) == "traversable" then
-    return x, y
-  end
-  for step = 16, map_width, 16 do
-    for _, try_x in ipairs({ x - step, x + step }) do
-      if try_x > 16 and try_x < map_width - 16
-          and map:get_ground(try_x, y, 0) == "traversable" then
-        return try_x, y
-      end
+  local spots = {}
+  for x = 32, map_width - 32, 16 do
+    if map:get_ground(x, y, 0) == "traversable" then
+      spots[#spots + 1] = x
     end
   end
-  return x, y
+  if #spots == 0 then
+    spots[1] = math.floor(map_width / 2 / 8) * 8
+  end
+  return spots, y
 end
 
 function map:on_started()
@@ -26,15 +23,20 @@ function map:on_started()
     sol.audio.play_music("eduardo/village")
   end
 
-  local x, y = find_south_spawn(map)
-  map:create_enemy({
-    name = "yard_swordsman",
-    breed = "yard_swordsman",
-    x = x,
-    y = y,
-    layer = 0,
-    direction = 3,
-  })
+  local spots, y = south_spots(map)
+  local count = math.random(1, 3)
+  count = math.min(count, #spots)
+  for i = 1, count do
+    local index = math.floor((i - 0.5) * #spots / count) + 1
+    map:create_enemy({
+      name = "yard_swordsman_" .. i,
+      breed = "yard_swordsman",
+      x = spots[index],
+      y = y,
+      layer = 0,
+      direction = 3,
+    })
+  end
 end
 
 function map:on_opening_transition_finished()

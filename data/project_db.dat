@@ -1096,3 +1096,512 @@ file{ path = "sprites/status_effects", author = "Max Mraz", license = "CC-BY-SA 
 file{ path = "sprites/entities/effects", license = "CC BY-SA 4.0" }
 file{ path = "sprites/entities/enemy_projectiles", license = "CC BY-SA 4.0" }
 file{ path = "sprites/entities/roll_effect.png", license = "CC BY-SA 4.0" }
+
+file{ path = "enemies/crow.lua", author = "Diarandor", license = "GPL v3" }
+file{ path = "enemies/spiderskull.lua", author = "Diarandor", license = "GPL v3" }
+file{ path = "enemies/wendigo.lua", author = "Diarandor", license = "GPL v3" }
+file{ path = "sprites/animals/beaver.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/beaver.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/cat_green.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/cat_green.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/cat_red.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/cat_red.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/cat_yellow.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/cat_yellow.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/chicken.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/chicken.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/chimp.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/fox.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/fox.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/lion.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/lion.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/mosquito.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/mosquito.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/phoenix.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/phoenix.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/primates.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/sea_turtle.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/sea_turtle.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/seagull.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/seagull.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/seagull_bartender.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/seagull_scientist.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/seagull_trash1.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/seagull_trash2.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/seagull_trash3.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/seagull_trash4.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/sheep.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/sheep.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/sheep_wolf.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/sheep_wolf.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/spider.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/squirrel.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/squirrel.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/wolf.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/animals/wolf.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/blocks/bertram_block.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/blocks/bertram_blocks.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/blocks/outside_block.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/blocks/statue.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/chests/bertram_big_chest.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/chests/bertram_chest.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/chests/bertram_chest.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/chests/zane_chest_gold.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/chests/zane_chest_gold.png", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/chests/zane_chest_green.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/chests/zane_chest_green.png", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/chests/zoria_big_chest.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/chests/zoria_chest.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/console/cursor.dat", author = "Maxs", license = "CC BY-SA 4.0" }
+file{ path = "sprites/console/cursor.png", author = "Maxs", license = "CC BY-SA 4.0" }
+file{ path = "sprites/console/icons.dat", author = "Maxs", license = "CC BY-SA 4.0" }
+file{ path = "sprites/console/icons.png", author = "Maxs", license = "CC BY-SA 4.0" }
+file{ path = "sprites/destructibles/bomb_flower.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/destructibles/bomb_flower.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/destructibles/rock_golden.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/destructibles/rock_grey.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/destructibles/rocks_and_signpost.png", author = "Diarandor, Max Mraz", license = "CC-BY-SA 4.0" }
+file{ path = "sprites/destructibles/sandbox_fruit.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/destructibles/vase_small.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/destructibles/vase_small.png", author = "Diarandor, Max Mraz", license = "CC-BY-SA 4.0" }
+file{ path = "sprites/destructibles/zoria_rock.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/door_small_key_block.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/door_weak_block.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/sideview_door_small_green.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/sideview_door_small_green.png", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/sideview_door_small_wooden.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/sideview_door_small_wooden.png", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/sideview_door_stone.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/sideview_door_stone.png", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/sideview_door_wooden.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/sideview_door_wooden.png", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/doors/sideview_outside_door.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/acidball.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bee_guard.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bee_guard.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bee_guard_weapon.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/arbror_root.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/arbror_root.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/drakomos.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/drakomos.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/drakomos_head.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/drakomos_lava.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/drakomos_lava.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/firebird.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/firebird.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/flora.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/flora.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/flora_eye.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/gelidrak.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/gelidrak.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/gelidrak_head.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/gelidrak_tail.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/giant_spider.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/giant_spider.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/khorneth.dat", author = "@PyroNet", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/khorneth.png", author = "@PyroNet", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/khorneth_left_blade.dat", author = "@PyroNet", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/khorneth_right_blade.dat", author = "@PyroNet", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/khotor.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/khotor.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/papillosaur_king.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/papillosaur_king.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/poutroxor.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/poutroxor.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/poutroxor_head.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/poutroxor_skeleton.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/teleido/teleido_warrior.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/teleido/teleido_warrior.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/teleido/teleido_wizard.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bosses/teleido/teleido_wizard.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bullblin_blue.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bullblin_blue.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bullblin_blue_weapon.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bullblin_red.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bullblin_red.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/bullblin_red_weapon.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/death.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/dogman_blue.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/dogman_blue.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/dogman_red.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/dogman_red.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/duck_soldier_blue.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/duck_soldier_blue.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/duck_soldier_blue_weapon.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/duck_soldier_green.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/duck_soldier_green.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/duck_soldier_green_weapon.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/duck_soldier_red.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/duck_soldier_red.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/duck_soldier_red_weapon.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/evil_tile.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/fire_circle.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/fire_circle.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/globul.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/globul.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/lizard.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/lizard.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/lizard_weapon.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/mandible.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/mandible.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/minillosaur_egg.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/minillosaur_egg_fixed.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/minillosaur_egg_thrown.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/pig_soldier_blue.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/pig_soldier_blue.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/pig_soldier_blue_weapon.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/pig_soldier_red.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/pig_soldier_red.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/pig_soldier_red_weapon.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/skeletor.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/skeletor.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/spider.dat", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/spider.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/enemies/wendigo.dat", author = "Diarandor", license = "GPL v3" }
+file{ path = "sprites/enemies/wendigo.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/entities/boomerang1.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/entities/dark0.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/entities/dark1.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/entities/dark2.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/entities/dark3.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/entities/hookshot.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/entities/hookshot.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/entities/zoria.png", author = "DragonDePlatino, Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/rachel.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/rachel_sword.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/rachel_sword.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/rachel_tunic.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_boomerang.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_bow.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_carrying.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_grabbing.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_hookshot.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_mermaid.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_miscellaneous.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_on_shield.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_plunging.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_running.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_running_on_sword.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_shovel.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_spin_attack.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_swimming.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_sword_brandish.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_sword_loading.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_sword_tapping.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_tunic.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/hero/robyne_victory.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/arrow.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/bag.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/bomb_bag.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/boomerang.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/boots.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/bow.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/bow_arrow.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/bread.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/cane.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/cape.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/compass.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/croissant.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/dowsing_rod.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/dragon_fruit.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/eye_look_icon.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/fairy.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/feather.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/fire_stone.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/flippers.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/flower_rose.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/gauntlets.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/gem_2.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/gold_bar.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/heart_2.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/heart_big.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/heart_piece.png", author = "Bertram", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/hookshot.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/keys.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/magic_pot.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/makopa.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/map_dungeon.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/map_overworld.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/mirror.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/oil_lamp.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/pause_icon.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/piece_of_cake.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/potion_bottles.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/potion_pot.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/quiver.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/scroll.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/shield.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/star_fruit.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/voadi_items.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/items/voadi_items.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/menus/dungeon_map_background.png", author = "Olivier Cléro", license = "CC BY-SA 4.0" }
+file{ path = "sprites/menus/game_over_blood.dat", author = "Olivier Cléro", license = "CC BY-SA 4.0" }
+file{ path = "sprites/menus/game_over_blood.png", author = "Olivier Cléro", license = "CC BY-SA 4.0" }
+file{ path = "sprites/menus/game_over_menu.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/menus/gplv3_logo.png", author = "GNU, Olivier Cléro", license = "CC BY-SA 4.0" }
+file{ path = "sprites/menus/outside_world_clouds.png", author = "Olivier Cléro", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/angry_toast.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/angry_toast.png", author = "Nathan Manske", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/astrologer.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/astrologer.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/billy.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/blacksmith.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/blacksmith.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/blacksmith_anvil.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/blacksmith_metal.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/blond_boy.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/blonde_woman.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/blue_haired_boy.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/broom_woman.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/brown_haired_woman.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/bun_woman.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/castle_guard.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/gnu.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/gnu.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/green_hat_man.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/greybeard.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/inferno.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/inferno.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/magic_ball.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/magic_deck.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/mimosa_pudica.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/mimosa_pudica.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/newlink.png", author = "Newlink", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/old_man.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/old_man.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/old_woman.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/old_woman.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/red_hood_man.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/sign_2.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/soyboy.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/soyboy.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/talk_icon.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/tom.dat", author = "Christopho", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/twink.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/twink.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/witch.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/witch.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/witch_broom.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/witch_marmite.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/npc/zoria_sign.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/carnivorous_trees_animated.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/flower.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/orange_peel.dat", author = "Max", license = "CC-0" }
+file{ path = "sprites/plants/orange_peel.png", author = "Max", license = "CC-0" }
+file{ path = "sprites/plants/pilea.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/plant.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/rafflesia-large.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/rafflesia-small.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/rafflesia.png", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/tall_grass.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/trees_animated.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/plants/vase_plant.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/shadows/shadow_huge_dynamic.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/streams/stream.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/switches/switch_aureole.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/switches/switch_aureole.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/switches/switch_lever.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/switches/switch_wall_1.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/switches/switch_wall_2.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/teletransporters/vortex.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/teletransporters/vortex.png", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/barrel_1.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/barrel_2.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/bed.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/bed.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/blue_vase.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/castle_flags.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/cattail.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/dragon_torch_statue.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/fountain.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/fountain.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/gravestone.dat", author = "DragonDePlatino", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/long_chair.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/steam.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/trash_1.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/trash_2.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/things/trash_3.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "sprites/weather/rain.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/weather/rain.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/weather/snow.dat", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "sprites/weather/snow.png", author = "Diarandor", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/eod_cave.dat", author = "boaromayo", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/eod_cave.tiles.png", author = "boaromayo", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/eod_temple.dat", author = "boaromayo", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/eod_temple.tiles.png", author = "boaromayo", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/zane_desert.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/zane_desert.tiles.png", author = "Zane Kukta, Stephen Challener", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/zane_forest.dat", author = "Zane Kukta", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/zane_forest.tiles.png", author = "Zane Kukta, Stephen Challener", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/zoria.dat", author = "Alex Gleason", license = "CC BY-SA 4.0" }
+file{ path = "tilesets/zoria.tiles.png", author = "DragonDePlatino, Alex Gleason", license = "CC BY-SA 4.0" }
+sprite{ id = "animals/beaver", description = "Beaver" }
+sprite{ id = "animals/cat_green", description = "Green Cat" }
+sprite{ id = "animals/cat_red", description = "Red Cat" }
+sprite{ id = "animals/cat_yellow", description = "Yellow Cat" }
+sprite{ id = "animals/chicken", description = "Chicken" }
+sprite{ id = "animals/chimp", description = "Chimp" }
+sprite{ id = "animals/fox", description = "Fox" }
+sprite{ id = "animals/lion", description = "Lion" }
+sprite{ id = "animals/mosquito", description = "Mosquito" }
+sprite{ id = "animals/phoenix", description = "Phoenix" }
+sprite{ id = "animals/sea_turtle", description = "Sea turtle" }
+sprite{ id = "animals/seagull", description = "Seagull" }
+sprite{ id = "animals/seagull_bartender", description = "Seagull bartender" }
+sprite{ id = "animals/seagull_scientist", description = "Seagull scientist" }
+sprite{ id = "animals/seagull_trash1", description = "Seagull - Trash 1" }
+sprite{ id = "animals/seagull_trash2", description = "Seagull - Trash 2" }
+sprite{ id = "animals/seagull_trash3", description = "Seagull - Trash 3" }
+sprite{ id = "animals/seagull_trash4", description = "Seagull - Trash 4" }
+sprite{ id = "animals/sheep", description = "Sheep" }
+sprite{ id = "animals/sheep_wolf", description = "Wolf in Sheep's Clothing" }
+sprite{ id = "animals/squirrel", description = "Squirrel" }
+sprite{ id = "animals/wolf", description = "Wolf" }
+sprite{ id = "blocks/bertram_block", description = "Bertram block" }
+sprite{ id = "blocks/outside_block", description = "Outside block" }
+sprite{ id = "blocks/statue", description = "Statue" }
+sprite{ id = "chests/bertram_big_chest", description = "Bertram big chest" }
+sprite{ id = "chests/bertram_chest", description = "Bertram chest" }
+sprite{ id = "chests/zane_chest_gold", description = "Zane large chest" }
+sprite{ id = "chests/zane_chest_green", description = "Zane chest" }
+sprite{ id = "chests/zoria_big_chest", description = "Zoria big chest" }
+sprite{ id = "chests/zoria_chest", description = "Chest" }
+sprite{ id = "console/cursor", description = "Console cursor" }
+sprite{ id = "console/icons", description = "Console icons" }
+sprite{ id = "destructibles/bomb_flower", description = "Bomb flower" }
+sprite{ id = "destructibles/rock_golden", description = "Rock (golden)" }
+sprite{ id = "destructibles/rock_grey", description = "Rock (grey)" }
+sprite{ id = "destructibles/vase_small", description = "Small vase" }
+sprite{ id = "destructibles/zoria_rock", description = "Rock" }
+sprite{ id = "doors/door_small_key_block", description = "Door (small key block)" }
+sprite{ id = "doors/door_weak_block", description = "Door (weak block)" }
+sprite{ id = "doors/sideview_door_small_green", description = "Side-view small door (green)" }
+sprite{ id = "doors/sideview_door_small_wooden", description = "Side-view small door (wooden)" }
+sprite{ id = "doors/sideview_door_stone", description = "Side-view door (stone)" }
+sprite{ id = "doors/sideview_door_wooden", description = "Side-view door (wooden)" }
+sprite{ id = "doors/sideview_outside_door", description = "Side-view outside closed door" }
+sprite{ id = "enemies/bee_guard", description = "Bee Guard" }
+sprite{ id = "enemies/bee_guard_weapon", description = "Bee Guard weapon" }
+sprite{ id = "enemies/bosses/arbror_root", description = "Arbror root" }
+sprite{ id = "enemies/bosses/drakomos", description = "Drakomos" }
+sprite{ id = "enemies/bosses/drakomos_head", description = "Drakomos head" }
+sprite{ id = "enemies/bosses/drakomos_lava", description = "Drakomos lava spawner" }
+sprite{ id = "enemies/bosses/firebird", description = "Fire Bird" }
+sprite{ id = "enemies/bosses/flora", description = "Flora" }
+sprite{ id = "enemies/bosses/flora_eye", description = "Flora eye" }
+sprite{ id = "enemies/bosses/gelidrak", description = "Gelidrak" }
+sprite{ id = "enemies/bosses/gelidrak_head", description = "Gelidrak head" }
+sprite{ id = "enemies/bosses/gelidrak_tail", description = "Gelidrak tail" }
+sprite{ id = "enemies/bosses/giant_spider", description = "Giant spider" }
+sprite{ id = "enemies/bosses/khorneth", description = "Khorneth" }
+sprite{ id = "enemies/bosses/khorneth_left_blade", description = "Khorneth left blade" }
+sprite{ id = "enemies/bosses/khorneth_right_blade", description = "Khorneth right blade" }
+sprite{ id = "enemies/bosses/khotor", description = "Khotor" }
+sprite{ id = "enemies/bosses/papillosaur_king", description = "Papillosaur King" }
+sprite{ id = "enemies/bosses/poutroxor", description = "Poutroxor" }
+sprite{ id = "enemies/bosses/poutroxor_head", description = "Poutroxor head" }
+sprite{ id = "enemies/bosses/poutroxor_skeleton", description = "Poutroxor skeleton" }
+sprite{ id = "enemies/bosses/teleido/teleido_warrior", description = "Teleido Warrior" }
+sprite{ id = "enemies/bosses/teleido/teleido_wizard", description = "Teleido Wizard" }
+sprite{ id = "enemies/bullblin_blue", description = "Bullblin (blue)" }
+sprite{ id = "enemies/bullblin_blue_weapon", description = "Bullblin (blue) weapon" }
+sprite{ id = "enemies/bullblin_red", description = "Bullblin (red)" }
+sprite{ id = "enemies/bullblin_red_weapon", description = "Bullblin (red) weapon" }
+sprite{ id = "enemies/dogman_blue", description = "Dogman (blue)" }
+sprite{ id = "enemies/dogman_red", description = "Dogman (red)" }
+sprite{ id = "enemies/duck_soldier_blue", description = "Duck Soldier (blue)" }
+sprite{ id = "enemies/duck_soldier_blue_weapon", description = "Duck Soldier (blue) weapon" }
+sprite{ id = "enemies/duck_soldier_green", description = "Duck Soldier (green)" }
+sprite{ id = "enemies/duck_soldier_green_weapon", description = "Duck Soldier (green) weapon" }
+sprite{ id = "enemies/duck_soldier_red", description = "Duck Soldier (red)" }
+sprite{ id = "enemies/duck_soldier_red_weapon", description = "Duck Soldier (red) weapon" }
+sprite{ id = "enemies/fire_circle", description = "Fire circle" }
+sprite{ id = "enemies/globul", description = "Globul" }
+sprite{ id = "enemies/lizard", description = "Lizard" }
+sprite{ id = "enemies/lizard_weapon", description = "Lizard weapon" }
+sprite{ id = "enemies/mandible", description = "Mandible" }
+sprite{ id = "enemies/minillosaur_egg_fixed", description = "Minillosaur Egg (thrown)" }
+sprite{ id = "enemies/minillosaur_egg_thrown", description = "Minillosaur Egg (fixed)" }
+sprite{ id = "enemies/pig_soldier_blue", description = "Pig Soldier (blue)" }
+sprite{ id = "enemies/pig_soldier_blue_weapon", description = "Pig Soldier (blue) weapon" }
+sprite{ id = "enemies/pig_soldier_red", description = "Pig Soldier (red)" }
+sprite{ id = "enemies/pig_soldier_red_weapon", description = "Pig Soldier (red) weapon" }
+sprite{ id = "enemies/skeletor", description = "Skeletor" }
+sprite{ id = "enemies/spider", description = "Spider" }
+sprite{ id = "enemies/wendigo", description = "Wendigo" }
+sprite{ id = "entities/boomerang1", description = "Boomerang 1" }
+sprite{ id = "entities/hookshot", description = "Hookshot" }
+sprite{ id = "hero/rachel_sword", description = "Sword" }
+sprite{ id = "hero/rachel_tunic", description = "Rachel" }
+sprite{ id = "hero/robyne_tunic", description = "Robyne purple" }
+sprite{ id = "items/voadi_items", description = "Items" }
+sprite{ id = "menus/game_over_blood", description = "Game-over (bleeding)" }
+sprite{ id = "npc/angry_toast", description = "Angry Toast" }
+sprite{ id = "npc/astrologer", description = "Astrologer" }
+sprite{ id = "npc/billy", description = "Billy" }
+sprite{ id = "npc/blacksmith", description = "Blacksmith" }
+sprite{ id = "npc/blacksmith_anvil", description = "Blacksmith's anvil" }
+sprite{ id = "npc/blacksmith_metal", description = "Blacksmith's metal" }
+sprite{ id = "npc/blond_boy", description = "Blond boy" }
+sprite{ id = "npc/blonde_woman", description = "Blonde woman" }
+sprite{ id = "npc/blue_haired_boy", description = "Blue-haired boy" }
+sprite{ id = "npc/broom_woman", description = "Broom woman" }
+sprite{ id = "npc/brown_haired_woman", description = "Brown-haired woman" }
+sprite{ id = "npc/bun_woman", description = "Bun woman" }
+sprite{ id = "npc/castle_guard", description = "Castle guard" }
+sprite{ id = "npc/gnu", description = "Gnu" }
+sprite{ id = "npc/green_hat_man", description = "Green hat man" }
+sprite{ id = "npc/greybeard", description = "Greybeard" }
+sprite{ id = "npc/inferno", description = "Inferno" }
+sprite{ id = "npc/magic_ball", description = "Magic ball" }
+sprite{ id = "npc/magic_deck", description = "Magic deck" }
+sprite{ id = "npc/mimosa_pudica", description = "Mimosa pudica" }
+sprite{ id = "npc/old_man", description = "Old man" }
+sprite{ id = "npc/old_woman", description = "Old Woman" }
+sprite{ id = "npc/red_hood_man", description = "Red hood man" }
+sprite{ id = "npc/sign_2", description = "Sign 2" }
+sprite{ id = "npc/soyboy", description = "Soyboy" }
+sprite{ id = "npc/tom", description = "Tom" }
+sprite{ id = "npc/twink", description = "Twink" }
+sprite{ id = "npc/witch", description = "Witch" }
+sprite{ id = "npc/witch_broom", description = "Broom witch" }
+sprite{ id = "npc/witch_marmite", description = "Marmite witch" }
+sprite{ id = "npc/zoria_sign", description = "Zoria Sign" }
+sprite{ id = "plants/flower", description = "Flower" }
+sprite{ id = "plants/orange_peel", description = "Orange Peels" }
+sprite{ id = "plants/pilea", description = "Pilea plant" }
+sprite{ id = "plants/plant", description = "Plant" }
+sprite{ id = "plants/rafflesia-large", description = "Rafflesia (large)" }
+sprite{ id = "plants/rafflesia-small", description = "Rafflesia (small)" }
+sprite{ id = "plants/tall_grass", description = "Tall grass" }
+sprite{ id = "plants/vase_plant", description = "Vase plant" }
+sprite{ id = "shadows/shadow_huge_dynamic", description = "Huge dynamic shadow" }
+sprite{ id = "streams/stream", description = "Conveyor belt" }
+sprite{ id = "switches/switch_aureole", description = "Switch aureole" }
+sprite{ id = "switches/switch_lever", description = "Leaver switch" }
+sprite{ id = "switches/switch_wall_1", description = "Wall switch 1" }
+sprite{ id = "switches/switch_wall_2", description = "Wall switch 2" }
+sprite{ id = "teletransporters/vortex", description = "Vortex" }
+sprite{ id = "things/barrel_1", description = "Barrel 1" }
+sprite{ id = "things/barrel_2", description = "Barrel 2" }
+sprite{ id = "things/bed", description = "Bed" }
+sprite{ id = "things/blue_vase", description = "Vase" }
+sprite{ id = "things/cattail", description = "Cattail Plant" }
+sprite{ id = "things/fountain", description = "Fountain" }
+sprite{ id = "things/gravestone", description = "Gravestone" }
+sprite{ id = "things/long_chair", description = "Long chair" }
+sprite{ id = "things/steam", description = "Steam" }
+sprite{ id = "things/trash_1", description = "Trash 1" }
+sprite{ id = "things/trash_2", description = "Trash 2" }
+sprite{ id = "things/trash_3", description = "Trash 3" }
+sprite{ id = "weather/rain", description = "Rain" }
+sprite{ id = "weather/snow", description = "Snow" }
+tileset{ id = "eod_cave", description = "Epic of Den Cave" }
+tileset{ id = "eod_temple", description = "Epic of Den Mountain Temple" }
+tileset{ id = "zane_desert", description = "Zane desert" }
+tileset{ id = "zane_forest", description = "Zane forest" }
+tileset{ id = "zoria", description = "Zoria" }
+enemy{ id = "crow", description = "Crow" }
+enemy{ id = "spiderskull", description = "Spiderskull" }
+enemy{ id = "wendigo", description = "Wendigo" }

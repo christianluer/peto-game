@@ -1,0 +1,66 @@
+animation{
+  name = "walking",
+  src_image = "enemies/wendigo.png",
+  frame_delay = 150,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 0, y = 0, frame_width = 32, frame_height = 32, origin_x = 8, origin_y = 25, num_frames = 8 },
+    { x = 0, y = 96, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 25, num_frames = 8 },
+    { x = 0, y = 64, frame_width = 32, frame_height = 32, origin_x = 24, origin_y = 25, num_frames = 8 },
+    { x = 0, y = 32, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 17, num_frames = 8 },
+  },
+}
+animation{
+  name = "hurt",
+  src_image = "enemies/wendigo.png",
+  frame_delay = 50,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 256, y = 0, frame_width = 32, frame_height = 32, origin_x = 8, origin_y = 25, num_frames = 3 },
+    { x = 256, y = 96, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 25, num_frames = 3 },
+    { x = 256, y = 64, frame_width = 32, frame_height = 32, origin_x = 20, origin_y = 25, num_frames = 3 },
+    { x = 256, y = 32, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 17, num_frames = 3 },
+  },
+}
+animation{
+  name = "shadow",
+  src_image = "enemies/wendigo.png",
+  directions = {
+    { x = 256, y = 128, frame_width = 32, frame_height = 32, origin_x = 8, origin_y = 25 },
+    { x = 256, y = 224, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 25 },
+    { x = 256, y = 192, frame_width = 32, frame_height = 32, origin_x = 24, origin_y = 25 },
+    { x = 256, y = 160, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 17 },
+  },
+}
+animation{
+  name = "stopped",
+  src_image = "enemies/wendigo.png",
+  directions = {
+    { x = 96, y = 0, frame_width = 32, frame_height = 32, origin_x = 12, origin_y = 25 },
+    { x = 96, y = 96, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 25 },
+    { x = 96, y = 64, frame_width = 32, frame_height = 32, origin_x = 20, origin_y = 25 },
+    { x = 96, y = 32, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 17 },
+  },
+}
+animation{
+  name = "stopped_head",
+  src_image = "enemies/wendigo.png",
+  directions = {
+    { x = 96, y = 128, frame_width = 32, frame_height = 32, origin_x = 12, origin_y = 25 },
+    { x = 96, y = 224, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 25 },
+    { x = 96, y = 192, frame_width = 32, frame_height = 32, origin_x = 20, origin_y = 25 },
+    { x = 96, y = 160, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 17 },
+  },
+}
+animation{
+  name = "walking_head",
+  src_image = "enemies/wendigo.png",
+  frame_delay = 150,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 0, y = 128, frame_width = 32, frame_height = 32, origin_x = 8, origin_y = 25, num_frames = 8 },
+    { x = 0, y = 224, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 25, num_frames = 8 },
+    { x = 0, y = 192, frame_width = 32, frame_height = 32, origin_x = 24, origin_y = 25, num_frames = 8 },
+    { x = 0, y = 160, frame_width = 32, frame_height = 32, origin_x = 16, origin_y = 17, num_frames = 8 },
+  },
+}

@@ -32,3 +32,9 @@ The dialog scripts come from the [Visual Novel System](https://gitlab.com/Shargo
 Elemental sprites from Max Mraz's [Trillium](https://gitlab.com/maxmraz/trillium) (`dev`): lightning bolts and zaps, fire, water splashes, ice blasts, hero fireballs, and the smoke, spark, and particle effects around them.
 
 They are mostly CC BY-SA 4.0 by Max Mraz. A few ice pieces are CC BY 4.0. Per-file lines are in `data/project_db.dat`. Adaptations stay under the same license, with credit.
+
+## Free resource pack, remaining sprites
+
+Sprites and tilesets that were not already in Peto were copied from the [Solarus Free Resource Pack](https://gitlab.com/solarus-games/resource-packs/solarus-free-resource-pack) `dev` branch. That includes the boss sprites (Khotor, Drakomos, Gelidrak, Khorneth, and the rest), extra heroes and NPCs, and the Zoria, Zane, and Epic of Den tilesets.
+
+Existing Peto files were left in place. New files keep the author and license recorded in `data/project_db.dat`. Most of this pack is CC BY-SA 4.0. Adaptations stay under that license.

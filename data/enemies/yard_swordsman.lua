@@ -3,10 +3,8 @@
 -- Notice range is four 16px tiles shorter than the hero's spell.
 
 local enemy = ...
-local magic_shot = require("scripts/magic_shot")
 
-local TILE = 16
-local AWARENESS = magic_shot.SHOT_RANGE - (4 * TILE)
+local AWARENESS = 230
 local MELEE = 28
 local WANDER_SPEED = 36
 local CHASE_SPEED = 56

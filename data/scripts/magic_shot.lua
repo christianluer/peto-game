@@ -4,7 +4,7 @@
 
 local MAGIC_SHOT_COST = 8
 local SHOT_COOLDOWN = 280
-local SHOT_RANGE = 330
+local SHOT_RANGE = 290
 local EQUIPPED_KEY = "spell_equipped"
 
 require("scripts/multi_events")

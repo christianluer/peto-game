@@ -9,5 +9,6 @@ require("scripts/hud/hud")
 require("scripts/menus/dialog_box")
 require("scripts/magic")
 require("scripts/magic_shot")
+require("scripts/companion")
 
 return true
