@@ -8,11 +8,11 @@ Install the engine, then from this folder:
 
 ```bash
 brew install solarus
-solarus-run .
+make start
 ```
 
 Maps and dialogue are edited in Solarus Quest Editor: https://www.solarus-games.org/download/
 
 ## Layout
 
-Game files live in `data/`. Project context for agents is in `AGENTS.md`. Asset licenses for the starter quest are in `CREDITS.md`.
+Game files live in `data/`. Agent context is in `AGENTS.md` and `docs/`. Asset licenses for the starter quest are in `CREDITS.md`.

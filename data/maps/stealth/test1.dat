@@ -1,0 +1,73 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  min_layer = 0,
+  max_layer = 2,
+  tileset = "demo_tilesets/overworld",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  pattern = "1",
+}
+
+tile{
+  layer = 0,
+  x = 64,
+  y = 96,
+  width = 16,
+  height = 16,
+  pattern = "831",
+}
+
+tile{
+  layer = 0,
+  x = 64,
+  y = 80,
+  width = 16,
+  height = 16,
+  pattern = "830",
+}
+
+tile{
+  layer = 0,
+  x = 232,
+  y = 96,
+  width = 16,
+  height = 16,
+  pattern = "831",
+}
+
+tile{
+  layer = 0,
+  x = 232,
+  y = 80,
+  width = 16,
+  height = 16,
+  pattern = "830",
+}
+
+enemy{
+  name = "bob",
+  layer = 0,
+  x = 152,
+  y = 101,
+  direction = 0,
+  breed = "dark_knight",
+}
+
+destination{
+  name = "destination",
+  layer = 0,
+  x = 160,
+  y = 197,
+  direction = 1,
+  default = true,
+}
+

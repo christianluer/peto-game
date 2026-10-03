@@ -12,6 +12,8 @@ local initial_menus = {}
 function sol.main:on_started()
 
   sol.main.load_settings()
+  -- 320x240 quest, drawn at 4x so pixels stay sharp. F11 toggles the engine fullscreen.
+  sol.video.set_window_size(1280, 960)
   math.randomseed(os.time())
 
   -- Show the initial menus.

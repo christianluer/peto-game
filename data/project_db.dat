@@ -1,10 +1,14 @@
 map{ id = "first_map", description = "First map" }
+map{ id = "demo/start", description = "Start Map" }
+map{ id = "items/bow" }
+map{ id = "stealth/test1" }
 
 tileset{ id = "castle", description = "Castle" }
 tileset{ id = "house", description = "House" }
 tileset{ id = "oceanset_inside", description = "Oceanset-Inside" }
 tileset{ id = "oceanset_outside", description = "Oceanset-Outside" }
 tileset{ id = "outside", description = "Light Overworld" }
+tileset{ id = "demo_tilesets/overworld", description = "demo_tilesets/overworld" }
 
 sprite{ id = "animals/bird_red", description = "Red Bird" }
 sprite{ id = "animals/butterfly_blue", description = "Butterfly blue" }
@@ -148,6 +152,10 @@ sprite{ id = "teletransporters/teletransporter_blue", description = "Teletranspo
 sprite{ id = "teletransporters/teletransporter_green", description = "Teletransporter (green)" }
 sprite{ id = "teletransporters/teletransporter_pink", description = "Teletransporter (pink)" }
 sprite{ id = "teletransporters/teletransporter_yellow", description = "Teletransporter (yellow)" }
+sprite{ id = "demo/npc/bronze_knight/bronze_knight", description = "Bronze Knight" }
+sprite{ id = "enemies/dark_knight", description = "enemies/dark_knight" }
+sprite{ id = "entities/vision_cone", description = "entities/vision_cone" }
+sprite{ id = "menus/solarus_logo/solarus_logo", description = "Solarus engine official logo" }
 
 music{ id = "eduardo/boss", description = "Boss" }
 music{ id = "eduardo/cave", description = "Cave" }
@@ -282,12 +290,14 @@ sound{ id = "world_warp", description = "world_warp" }
 sound{ id = "wrong", description = "wrong" }
 sound{ id = "wrong2", description = "wrong2" }
 sound{ id = "wrong3", description = "wrong3" }
+sound{ id = "menus/solarus_logo/solarus_logo", description = "Solarus engine official logo sound" }
 
 item{ id = "gem", description = "Gem (x1 / x5 / x20 / x50 / x300)" }
 item{ id = "heart", description = "Heart" }
 item{ id = "money_bag", description = "Money bag (small / large / huge)" }
 item{ id = "sword", description = "Sword" }
 item{ id = "tunic", description = "Tunic (red / green / purple)" }
+item{ id = "bow", description = "Bow" }
 
 enemy{ id = "chameleon", description = "Chameleon" }
 enemy{ id = "explosion", description = "Explosion" }
@@ -307,11 +317,18 @@ enemy{ id = "slime_red", description = "Slime (red)" }
 enemy{ id = "slime_yellow", description = "Slime (yellow)" }
 enemy{ id = "slimy_green", description = "Slimy Green" }
 
+enemy{ id = "dark_knight", description = "dark_knight" }
+
+entity{ id = "arrow", description = "arrow" }
+entity{ id = "check", description = "check" }
+entity{ id = "point", description = "point" }
+entity{ id = "vision_cone", description = "vision_cone" }
 
 language{ id = "en", description = "English" }
 
 font{ id = "8_bit", description = "8 bit" }
 font{ id = "enter_command", description = "Enter Command" }
+font{ id = "ComicNeue-Angular-Bold", description = "ComicNeue-Angular-Bold" }
 
 shader{ id = "grayscale", description = "grayscale" }
 shader{ id = "hq2x", description = "hq2x" }
@@ -840,3 +857,86 @@ file{ path = "tilesets/oceanset_outside.dat", author = "Max Mraz", license = "CC
 file{ path = "tilesets/oceanset_outside.tiles.png", author = "Max Mraz", license = "CC BY-SA 4.0" }
 file{ path = "tilesets/outside.dat", author = "Diarandor, Max Mraz", license = "CC-BY-SA 4.0" }
 file{ path = "tilesets/outside.tiles.png", author = "Diarandor, Max Mraz", license = "CC-BY-SA 4.0" }
+file{ path = "entities/arrow.lua", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "fonts/ComicNeue-Angular-Bold.ttf", author = "crozynski https://github.com/crozynski/comicneue", license = "OFL-1.1" }
+file{ path = "items/bow.lua", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "languages/en/text/dialogs.dat", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "maps/demo", author = "Splyth, Shargon", license = "MIT" }
+file{ path = "maps/demo/start.dat", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "maps/demo/start.lua", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "maps/items", author = "Splyth, Shargon", license = "MIT" }
+file{ path = "maps/items/bow.dat", author = "Splyth, Shargon", license = "MIT" }
+file{ path = "maps/items/bow.lua", author = "Splyth, Shargon", license = "MIT" }
+file{ path = "scripts/dialogs", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/background.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/character_manager.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/configs", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/configs/characters", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/configs/scenes", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/configs/scenes/demo", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/conversation_manager.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/box_graphic.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/box_text", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/box_text/box_text_manager.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/box_text/lines", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/box_text/lines/line", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/box_text/lines/line/line_wrapper.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/box_text/lines/lines_wrapper.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/box_text/question", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/box_text/question/question_wrapper.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/dialog_box_manager.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/name_box", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/dialog_box/name_box/name_box_manager.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/libs", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/libs/color_helper.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/libs/config_loader.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/libs/display_position.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/libs/image_helper.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/libs/paths.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/libs/table_helpers.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/libs/transitions.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/scene_manager.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/visual_novel_manager.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/menus/start_menus.lua", author = "Olivier Cléro", }
+file{ path = "scripts/meta", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/meta/hero.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/multiple_events.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "sounds/menus", license = "MIT" }
+file{ path = "sounds/menus/solarus_logo", license = "MIT" }
+file{ path = "sounds/menus/solarus_logo/solarus_logo.ogg", author = "Diarandor", license = "CC-BY 4.0" }
+file{ path = "sprites/demo", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "sprites/demo/hud", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "sprites/demo/hud/dialog_boxes", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "sprites/demo/hud/dialog_boxes/dialog_box.png", author = "Grahhhhh https://opengameart.org/content/dialog-box", license = "CC0" }
+file{ path = "sprites/demo/npc", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "sprites/demo/npc/bronze_knight", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "sprites/demo/npc/bronze_knight/bronze_knight.dat", author = "Shargon", license = "MIT" }
+file{ path = "sprites/demo/npc/bronze_knight/bronze_knight.png", author = "Shargon https://opengameart.org/content/13x19-multicolor-knights", license = "CC0" }
+file{ path = "sprites/entities/blast.png", author = "Master484 http://m484games.ucoz.com/", license = "CC0" }
+file{ path = "sprites/hero/knight_wind.png", author = "Shargon", license = "CC0" }
+file{ path = "sprites/hero/primary_knight.png", author = "Shargon https://opengameart.org/content/13x19-multicolor-knights", license = "CC0" }
+file{ path = "sprites/hero/running.png", author = "Shargon", license = "CC0" }
+file{ path = "sprites/menus/solarus_logo", author = "Olivier Cléro, Maxs", license = "MIT" }
+file{ path = "sprites/menus/solarus_logo/solarus_logo.dat", author = "Olivier Cléro, Maxs", license = "MIT" }
+file{ path = "sprites/menus/solarus_logo/solarus_logo.png", author = "Olivier Cléro, Maxs", license = "CC-BY 4.0" }
+file{ path = "tilesets/demo_tilesets", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "tilesets/demo_tilesets/overworld.dat", author = "ArMM1998 https://opengameart.org/content/zelda-like-tilesets-and-sprites", license = "CC0" }
+file{ path = "tilesets/demo_tilesets/overworld.tiles.png", author = "ArMM1998 https://opengameart.org/content/zelda-like-tilesets-and-sprites", license = "CC0" }
+file{ path = "LICENSE.txt", author = "Scott Mackensen, Eric Mackensen", license = "MIT" }
+file{ path = "maps/stealth", author = "Splyth, Shargon", license = "MIT" }
+file{ path = "maps/stealth/test1.dat", author = "Splyth, Shargon", license = "MIT" }
+file{ path = "maps/stealth/test1.lua", author = "Splyth, Shargon", license = "MIT" }
+file{ path = "scripts/dialogs/LICENSE.txt", author = "Scott Mackensen, Eric Mackensen", license = "MIT" }
+file{ path = "scripts/dialogs/configs/characters/default.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/configs/scenes/default.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/configs/scenes/demo/config.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "scripts/dialogs/libs/directories_and_files.lua", author = "Splyth, Shargon https://gitlab.com/ShargonPendragon/visual-novel-system", license = "MIT" }
+file{ path = "entities/check.lua", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "entities/point.lua", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "entities/vision_cone.lua", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "sprites/entities/vision_cone.dat", author = "Shargon, Splyth", license = "MIT" }
+file{ path = "sprites/entities/vision_cone.png", author = "Shargon, Splyth", license = "CC0" }
+file{ path = "enemies/dark_knight.lua", author = "Scott Mackensen, Eric Mackensen", license = "MIT" }
+file{ path = "sprites/enemies/dark_knight.dat", author = "Scott Mackensen, Eric Mackensen", license = "MIT" }
+file{ path = "sprites/enemies/dark_knight.png", author = "Scott Mackensen, Eric Mackensen", license = "CC0" }

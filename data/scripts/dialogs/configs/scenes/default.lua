@@ -1,0 +1,51 @@
+background = {
+	image = {
+		path = "default"
+	}
+}
+dialog_box = {
+  close_delay = 0,
+   image = {
+    position = "center",
+    path = "demo/hud/dialog_boxes/dialog_box.png"
+  },
+  text = {
+    max_displayed_lines = 4,
+    x_offset = 24,
+    y_offset = 20,
+    line_space = 14,
+    line = {
+      speed = "fast",
+      horizontal_alignment = "left",
+      vertical_alignment =  "middle",
+      font = "ComicNeue-Angular-Bold",
+      font_size = 12
+    },
+    question = {
+      line_buffer = 7,
+      question_marker = "$?",
+      cursor_wrap = true,
+      cursor = {
+        image = {
+          path = "demo/hud/cursor/icons/individual_icons/book_04e.png",
+          x_offset = 0,
+          y_offset = -8
+        }
+      }
+    }
+  },
+  name_box = {
+    image = {
+      path = "demo/hud/dialog_boxes/name_box.png",
+      position = "outsidetopleft"
+    },
+    line = {
+      x_offset = 3,
+      y_offset = 10,
+      horizontal_alignment = "left",
+      vertical_alignment = "middle",
+      font = "ComicNeue-Angular-Bold",
+      font_size = 10
+    }
+  }
+}

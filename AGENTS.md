@@ -8,24 +8,27 @@ The repo name and working title are Peto. Either can change.
 
 The playable files in `data/` start from Solarus Quest Editor's new-quest template. That map, hero, enemies, and music are placeholder kit art. They are not Peto canon.
 
+## Read the docs first
+
+Before changing the quest, read `docs/README.md`, then `docs/game.md`, then the one skill under `docs/skills/` that matches the task. Those files are the working context for this game. Do not guess Solarus editor steps, resource imports, or map warps when a skill already describes them.
+
+| Task | Read |
+|---|---|
+| What the quest is, where files live, how to run it | `docs/game.md` |
+| Open this quest, or unpack a `.solarus` archive | `docs/skills/editing-a-quest/SKILL.md` |
+| Bring in tilesets, sprites, audio, or scripts from a pack or another quest | `docs/skills/import-resources/SKILL.md` |
+| Doors, warps, map changes, scrolling edges | `docs/skills/teletransportation/SKILL.md` |
+
 ## Engine
 
 Solarus 2 is the engine. Homebrew's current build is 2.1.4, and `data/quest.dat` targets quest format 2.0, which that build runs. This repo is the quest (the game data), not a fork of the C++ engine.
 
-- Run it with `solarus-run` from the repo root.
-- Edit maps, sprites, tilesets, and dialogue in Solarus Quest Editor.
+- Run it from the repo root with `make start`. Details are in `docs/game.md`.
+- Edit maps, sprites, tilesets, and dialogue in Solarus Quest Editor. Follow `docs/skills/editing-a-quest/SKILL.md`.
 - Write story and behavior in Lua under `data/`.
 - Change the Solarus engine source only when a feature is missing. If a modified engine is ever distributed, those engine changes stay GPL v3 and the modified source must ship with it.
 
-Quest metadata lives in `data/quest.dat`. The screen size is 320×240.
-
-## Where things go
-
-- `data/maps/`: tile maps and their Lua scripts.
-- `data/languages/`: dialogue and UI strings. English is `data/languages/en/text/`.
-- `data/scripts/`: menus, HUD, and game startup.
-- `data/items/`, `data/enemies/`, `data/entities/`: behavior scripts.
-- `data/sprites/`, `data/tilesets/`, `data/sounds/`, `data/musics/`: art and audio.
+Quest metadata lives in `data/quest.dat`. The screen size is 320×240. Folder roles are listed in `docs/game.md`.
 
 A dialogue or plot rewrite should stay in language files and map scripts. Leave movement, HUD, and item systems alone unless the design change requires it.
 

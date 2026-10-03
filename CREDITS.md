@@ -13,3 +13,16 @@ Most of those images, sounds, and music come from the Solarus Free Resource Pack
 Solarus Quest Editor can show the author and license recorded on each file. Keep that credit when a template file is kept or adapted.
 
 The Solarus engine itself is GPL v3: https://www.solarus-games.org/
+
+## MIT starter quest
+
+Resources added from Scott Mackensen and Eric Mackensen's [Solarus MIT Starter Quest](https://gitlab.com/Splyth/solarus-mit-starter-quest): the dark knight enemy, bow item, bronze knight, knight hero images, overworld tileset, vision cone, demo maps, dialog scripts, and the Comic Neue font.
+
+The quest's own license file is `data/LICENSE.txt`. Per-file authors and licenses are in `data/project_db.dat`. In short:
+
+- Scripts from that quest are MIT.
+- Most of its art is CC0.
+- `fonts/ComicNeue-Angular-Bold.ttf` is SIL Open Font License 1.1, by crozynski.
+- `sounds/menus/solarus_logo/solarus_logo.ogg` and `sprites/menus/solarus_logo/solarus_logo.png` are CC BY 4.0, by Diarandor and Olivier Cléro.
+
+The dialog scripts come from the [Visual Novel System](https://gitlab.com/ShargonPendragon/visual-novel-system). They are in the quest, and they are not wired into Peto's startup.
