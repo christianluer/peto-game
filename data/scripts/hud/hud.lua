@@ -29,6 +29,7 @@ local function initialize_hud_features(game)
   local attack_icon
   local pause_icon
   local hearts
+  local magic_bar
   local rupees
   local keys
 
@@ -241,6 +242,9 @@ local function initialize_hud_features(game)
       -- Set the transparency on the hearts.
       if hearts then
         hearts:set_transparent(top_right_transparent)
+      end
+      if magic_bar then
+        magic_bar:set_transparent(top_right_transparent)
       end
     end
 
@@ -529,6 +533,8 @@ local function initialize_hud_features(game)
       pause_icon = element
     elseif element_config.menu_script == "scripts/hud/hearts" then
       hearts = element
+    elseif element_config.menu_script == "scripts/hud/magic_bar" then
+      magic_bar = element
     elseif element_config.menu_script == "scripts/hud/small_keys" then
       keys = element
     elseif element_config.menu_script == "scripts/hud/rupees" then

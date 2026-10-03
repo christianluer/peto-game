@@ -26,3 +26,9 @@ The quest's own license file is `data/LICENSE.txt`. Per-file authors and license
 - `sounds/menus/solarus_logo/solarus_logo.ogg` and `sprites/menus/solarus_logo/solarus_logo.png` are CC BY 4.0, by Diarandor and Olivier Cléro.
 
 The dialog scripts come from the [Visual Novel System](https://gitlab.com/ShargonPendragon/visual-novel-system). They are in the quest, and they are not wired into Peto's startup.
+
+## Trillium spell effects
+
+Elemental sprites from Max Mraz's [Trillium](https://gitlab.com/maxmraz/trillium) (`dev`): lightning bolts and zaps, fire, water splashes, ice blasts, hero fireballs, and the smoke, spark, and particle effects around them.
+
+They are mostly CC BY-SA 4.0 by Max Mraz. A few ice pieces are CC BY 4.0. Per-file lines are in `data/project_db.dat`. Adaptations stay under the same license, with credit.

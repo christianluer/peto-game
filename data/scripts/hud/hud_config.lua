@@ -19,6 +19,13 @@ local hud_config = {
     y = 8,
   },
 
+  -- Magic bar, just under the hearts.
+  {
+    menu_script = "scripts/hud/magic_bar",
+    x = -96,
+    y = 28,
+  },
+
   -- Money counter.
   {
     menu_script = "scripts/hud/money",
