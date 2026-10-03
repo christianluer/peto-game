@@ -17,7 +17,7 @@ Open the quest in Solarus Quest Editor with File > Load Quest and choose this re
 
 - `data/quest.dat`: title, author, version, screen size. Savegames use the write dir `peto`.
 - `data/main.lua`: startup, window size, fullscreen keys.
-- `data/maps/first_map.dat` and `first_map.lua`: the only map.
+- `data/maps/first_map.dat`: the cottage where a new game starts. `home_yard.dat` is the grass outside its door.
 - `data/languages/en/text/`: English dialogue (`dialogs.dat`) and UI strings (`strings.dat`).
 - `data/scripts/`: menus, HUD, game startup.
 - `data/items/`, `data/enemies/`, `data/entities/`: behavior.

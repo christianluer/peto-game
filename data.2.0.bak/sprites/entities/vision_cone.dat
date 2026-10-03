@@ -1,0 +1,10 @@
+animation{
+  name = "defualt",
+  src_image = "entities/vision_cone.png",
+  directions = {
+    { x = 0, y = 0, frame_width = 100, frame_height = 100, origin_x = 50, origin_y = 50 },
+    { x = 0, y = 100, frame_width = 100, frame_height = 100, origin_x = 50, origin_y = 50 },
+    { x = 100, y = 0, frame_width = 100, frame_height = 100, origin_x = 50, origin_y = 50 },
+    { x = 100, y = 100, frame_width = 100, frame_height = 100, origin_x = 50, origin_y = 50 },
+  },
+}

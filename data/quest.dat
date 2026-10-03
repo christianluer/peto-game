@@ -1,5 +1,5 @@
 quest{
-  solarus_version = "2.0",
+  solarus_version = "2.1",
   write_dir = "peto",
   title = "Peto",
   short_description = "An original real-time action RPG.",

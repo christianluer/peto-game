@@ -1,4 +1,5 @@
-map{ id = "first_map", description = "First map" }
+map{ id = "first_map", description = "Cottage" }
+map{ id = "home_yard", description = "Cottage yard" }
 map{ id = "demo/start", description = "Start Map" }
 map{ id = "items/bow" }
 map{ id = "stealth/test1" }
@@ -378,6 +379,7 @@ enemy{ id = "slime_yellow", description = "Slime (yellow)" }
 enemy{ id = "slimy_green", description = "Slimy Green" }
 
 enemy{ id = "dark_knight", description = "dark_knight" }
+enemy{ id = "yard_swordsman", description = "Yard swordsman" }
 
 entity{ id = "arrow", description = "arrow" }
 entity{ id = "check", description = "check" }

@@ -1,0 +1,5 @@
+dialog_box = {
+  image = {
+    position = "left"
+  }
+}

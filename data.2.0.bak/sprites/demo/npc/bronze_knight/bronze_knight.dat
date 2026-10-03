@@ -1,0 +1,22 @@
+animation{
+  name = "stopped",
+  src_image = "demo/npc/bronze_knight/bronze_knight.png",
+  directions = {
+    { x = 2, y = 32, frame_width = 16, frame_height = 24, origin_x = 8, origin_y = 21 },
+    { x = 1, y = 64, frame_width = 17, frame_height = 24, origin_x = 8, origin_y = 21 },
+    { x = 0, y = 96, frame_width = 16, frame_height = 24, origin_x = 8, origin_y = 21 },
+    { x = 1, y = 0, frame_width = 17, frame_height = 24, origin_x = 8, origin_y = 21 },
+  },
+}
+animation{
+  name = "walking",
+  src_image = "demo/npc/bronze_knight/bronze_knight.png",
+  frame_delay = 150,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 2, y = 32, frame_width = 16, frame_height = 24, origin_x = 8, origin_y = 21, num_frames = 4 },
+    { x = 1, y = 64, frame_width = 17, frame_height = 24, origin_x = 8, origin_y = 21, num_frames = 4 },
+    { x = 0, y = 96, frame_width = 16, frame_height = 24, origin_x = 8, origin_y = 21, num_frames = 4 },
+    { x = 1, y = 0, frame_width = 17, frame_height = 24, origin_x = 8, origin_y = 21, num_frames = 4 },
+  },
+}
