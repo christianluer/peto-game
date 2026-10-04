@@ -3,21 +3,6 @@
 
 local map = ...
 
-local function south_spots(map)
-  local map_width, map_height = map:get_size()
-  local y = map_height - 32
-  local spots = {}
-  for x = 32, map_width - 32, 16 do
-    if map:get_ground(x, y, 0) == "traversable" then
-      spots[#spots + 1] = x
-    end
-  end
-  if #spots == 0 then
-    spots[1] = math.floor(map_width / 2 / 8) * 8
-  end
-  return spots, y
-end
-
 function map:on_started()
   if sol.audio.get_music() ~= "eduardo/village" then
     sol.audio.play_music("eduardo/village")
@@ -36,7 +21,7 @@ function map:on_started()
 
   local fair_open = false
   local function try_open_fair()
-    if fair_open or map:get_entities_count("yard_swordsman") > 0 or map:get_entities_count("yard_clucko") > 0 then
+    if fair_open or map:get_entities_count("yard_clucko") > 0 or map:get_entities_count("yard_turtle") > 0 then
       return
     end
     fair_open = true
@@ -52,26 +37,21 @@ function map:on_started()
     })
   end
 
-  local spots, y = south_spots(map)
-  local count = math.random(1, 3)
-  count = math.min(count, #spots)
-  for i = 1, count do
-    local index = math.floor((i - 0.5) * #spots / count) + 1
-    map:create_enemy({
-      name = "yard_swordsman_" .. i,
-      breed = "yard_swordsman",
-      x = spots[index],
-      y = y,
-      layer = 0,
-      direction = 3,
-    })
-    local enemy = map:get_entity("yard_swordsman_" .. i)
-    if enemy ~= nil then
-      function enemy:on_dead()
-        try_open_fair()
-      end
+  local map_width, map_height = map:get_size()
+  local turtle = map:create_enemy({
+    name = "yard_turtle",
+    breed = "yard_turtle",
+    x = map_width - 96,
+    y = map_height - 64,
+    layer = 0,
+    direction = 3,
+  })
+  if turtle ~= nil then
+    function turtle:on_dead()
+      try_open_fair()
     end
   end
+
   local clucko_spots = { { 112, 48 }, { 144, 72 }, { 176, 48 } }
   for i, spot in ipairs(clucko_spots) do
     map:create_enemy({

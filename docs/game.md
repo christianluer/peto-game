@@ -17,7 +17,7 @@ Open the quest in Solarus Quest Editor with File > Load Quest and choose this re
 
 - `data/quest.dat`: title, author, version, screen size. Savegames use the write dir `peto`.
 - `data/main.lua`: startup, window size, fullscreen keys.
-- `data/maps/first_map.dat`: the cottage where a new game starts (house tileset). The south door fades to `home_yard` only after the poem and Denna's fixed reply. Stand in the top-left corner and press **F** to read the poem.
+- `data/maps/first_map.dat`: the cottage where a new game starts (house tileset). The south door fades to `home_yard` only after the poem and Denna's fixed reply. Stand in the top-left corner and press **F** to read the poem. Denna appears where you enter each map and does not follow. Elene follows in the Robyne sprite, including the swim animations on water. **F** opens either chat.
 - `data/maps/home_yard.dat`: the grass outside that door (outside tileset). Christian has painted this map in the editor. Add yard behavior in `home_yard.lua`, not by rewriting the tile data. The south end of the dirt path fades to `fair_carriages` after every yard swordsman on that visit is dead.
 - `data/maps/fair_carriages.dat`: a draft fair road with three carriages. Arliden, Laurian, Trip, Teren, and Shandi each have one fixed line in `dialogs.dat`. Face the nearest of them and press **F**. Calder, a draft name, opens the chat on **F** instead of a fixed line. **F** is the talk key for Denna too. The nearest person speaks. He does not follow. Walk west to return to the yard. The mailbox adds a character key, `denna` or `teacher`, so the bridge uses that person's prompt.
 - `data/languages/en/text/`: English dialogue (`dialogs.dat`) and UI strings (`strings.dat`).
@@ -48,7 +48,7 @@ Ollama and the model weights stay outside this repo, in `~/.ollama`. The model i
 
 NPCs use `set_traversable(true)`. This Solarus build has no `set_traversable_by`. Map scripts already define `map:on_started`, so a listener on the map metatable for that event does not run. Spawn something on every map from `game` `on_map_changed`.
 
-Each visit to the yard spawns 1, 2, or 3 swordsmen along the south edge and 3 cluckos in the upper left. Shared notice range, hit, and sprites live in `data/scripts/yard_enemy.lua`. Swordsmen notice at 230 pixels. Their hit is the hero's sword plus 20 percent, rounded up to a whole life point. Cluckos notice at 70 percent of that, stand still, fire two fireballs (half a spell's length, same damage as water), then peck for half a sword. The fair path opens after the swordsmen and the cluckos from that visit are dead.
+The yard swordsman breed stays in `data/enemies/yard_swordsman.lua` for a later map. This yard spawns 3 cluckos in the upper left and one slow green duck soldier toward the bottom right. Shared notice range, hit, and sprites live in `data/scripts/yard_enemy.lua`. Cluckos notice at 120 pixels, stand still, fire two fireballs, then peck for half a sword. The duck soldier has 8 life and moves slowly. The fair path opens after the cluckos and the duck soldier are dead. The east end of the fair has 5 blue slimes, slow, with 6 life, and the same peck as a clucko. Water deals 2.
 
 ## Licenses
 

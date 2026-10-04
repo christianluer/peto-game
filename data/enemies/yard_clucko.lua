@@ -6,7 +6,7 @@ local yard_enemy = require("scripts/yard_enemy")
 
 yard_enemy.attach(enemy, {
   sprites = { "enemies/clucko" },
-  awareness = math.floor(yard_enemy.SWORDSMAN_AWARENESS * 0.7),
+  awareness = 120,
   melee = 20,
   damage = yard_enemy.half_sword_damage,
   idle_animation = "stopped",

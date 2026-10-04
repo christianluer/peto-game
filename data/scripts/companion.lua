@@ -1,11 +1,10 @@
--- A companion who follows the hero, never fights, and opens a chat.
--- The name Denna is a draft Christian asked for, in the manner of that lover.
+-- Elene follows the hero in the Robyne sprite. Denna stays in the cottage.
 -- Press the action key while facing them to talk.
 
 local companion_llm = require("scripts/companion_llm")
 require("scripts/multi_events")
 
-local SPRITE = "npc/woman_1a" -- woman type 1, sprites/npc/woman_type1_a.png
+local SPRITE = "hero/robyne_tunic"
 local TILE = 16
 local FOLLOW_DISTANCE = 5 * TILE
 local FOLLOW_SPEED = 64
@@ -231,6 +230,8 @@ function chat_menu:on_started()
   if #shown == 0 then
     if who.key == "teacher" then
       push_message(self.game, who.label, "Stand still. If you shout at the air, it will not answer.")
+    elseif who.key == "elene" then
+      push_message(self.game, who.label, "You came back. Sit, if you want to talk.")
     else
       push_message(self.game, who.label, "There you are. I was beginning to think you'd forgotten my name.")
     end
@@ -305,7 +306,7 @@ function chat_menu:submit()
   companion_llm:reply(text, lines_for(self.game), function(answer)
     push_message(self.game, who.label, answer)
     self.waiting = false
-  end)
+  end, who.key)
 end
 
 function chat_menu:on_character_pressed(character)
@@ -379,17 +380,30 @@ function open_chat(game, who)
   sol.menu.start(game, chat_menu)
 end
 
-local function beside_hero(hero)
+local function beside_hero(hero, avoid)
   local map = hero:get_map()
   local x, y, layer = hero:get_position()
   local spots = {
-    { x - 20, y + 12 },
-    { x + 20, y + 12 },
-    { x, y + 24 },
-    { x, y - 16 },
+    { x - 24, y + 12 },
+    { x + 24, y + 12 },
+    { x, y + 28 },
+    { x, y - 20 },
+    { x - 24, y - 12 },
+    { x + 24, y - 12 },
   }
+  local function open(spot)
+    local ground = map:get_ground(spot[1], spot[2], layer)
+    if ground ~= "traversable" and ground ~= "shallow_water" and ground ~= "deep_water" and ground ~= "grass" then
+      return false
+    end
+    if avoid == nil then
+      return true
+    end
+    local ax, ay = avoid:get_position()
+    return math.abs(spot[1] - ax) > 16 or math.abs(spot[2] - ay) > 16
+  end
   for _, spot in ipairs(spots) do
-    if map:get_ground(spot[1], spot[2], layer) == "traversable" then
+    if open(spot) then
       return spot[1], spot[2], layer
     end
   end
@@ -406,40 +420,134 @@ local function follow(npc)
     return
   end
   local sprite = npc:get_sprite()
+  local x, y, layer = npc:get_position()
+  local ground = map:get_ground(x, y, layer)
+  local state = hero:get_state()
   local distance = npc:get_distance(hero)
+  local function reappear()
+    local px, py, player_layer = beside_hero(hero, map:get_entity("denna"))
+    npc:set_position(px, py, player_layer)
+    if npc:get_movement() ~= nil then
+      npc:stop_movement()
+    end
+    npc._stuck_x, npc._stuck_y, npc._stuck_ticks = nil, nil, nil
+  end
+  local function pose(moving)
+    if sprite == nil then
+      return
+    end
+    local water = ground == "deep_water" or ground == "shallow_water" or state == "swimming"
+    local anim = "stopped"
+    if water then
+      if not moving then
+        anim = "swimming_stopped"
+      elseif distance > 110 then
+        anim = "swimming_fast"
+      else
+        anim = "swimming_slow"
+      end
+    elseif state == "jumping" then
+      anim = "jumping"
+    elseif state == "plunging" then
+      anim = "plunging_water"
+    elseif state == "falling" or ground == "hole" then
+      anim = "falling"
+    elseif ground == "lava" then
+      anim = "plunging_lava"
+    elseif state == "hurt" then
+      anim = "hurt"
+    elseif moving and distance > 110 then
+      anim = "running"
+    elseif moving then
+      anim = "walking"
+    end
+    if sprite:has_animation(anim) and sprite:get_animation() ~= anim then
+      sprite:set_animation(anim)
+    end
+  end
   if distance > 200 then
-    local px, py, layer = beside_hero(hero)
-    npc:set_position(px, py, layer)
+    reappear()
+    x, y, layer = npc:get_position()
     distance = npc:get_distance(hero)
   end
-  if distance > FOLLOW_DISTANCE then
-    local movement = sol.movement.create("path_finding")
-    movement:set_speed(FOLLOW_SPEED)
-    movement:set_target(hero)
+  if distance <= FOLLOW_DISTANCE then
+    if npc:get_movement() ~= nil then
+      npc:stop_movement()
+    end
+    npc._stuck_x, npc._stuck_y, npc._stuck_ticks = nil, nil, nil
+    pose(false)
+    return
+  end
+  local last_x, last_y = npc._stuck_x, npc._stuck_y
+  if last_x ~= nil and math.abs(x - last_x) < 2 and math.abs(y - last_y) < 2 then
+    npc._stuck_ticks = (npc._stuck_ticks or 0) + 1
+    if npc._stuck_ticks >= 4 then
+      reappear()
+      distance = npc:get_distance(hero)
+      if distance <= FOLLOW_DISTANCE then
+        pose(false)
+        return
+      end
+    end
+  else
+    npc._stuck_x, npc._stuck_y, npc._stuck_ticks = x, y, 0
+  end
+  if sprite ~= nil then
+    sprite:set_direction(npc:get_direction4_to(hero))
+  end
+  local speed = distance > 110 and 88 or FOLLOW_SPEED
+  local movement = npc:get_movement()
+  -- A finished straight step used to switch to pathfinding and then never
+  -- start again. Pixel-smooth walking keeps the same movement and retargets it.
+  if movement == nil or movement:get_type() ~= "straight" then
+    if movement ~= nil then
+      npc:stop_movement()
+    end
+    movement = sol.movement.create("straight")
+    movement:set_smooth(true)
     movement:start(npc)
-    if sprite ~= nil then
-      sprite:set_direction(npc:get_direction4_to(hero))
-      sprite:set_animation("walking")
-    end
-  elseif npc:get_movement() ~= nil then
-    npc:stop_movement()
-    if sprite ~= nil then
-      sprite:set_animation("stopped")
-    end
+  end
+  movement:set_speed(speed)
+  movement:set_angle(npc:get_angle(hero))
+  movement:set_max_distance(math.max(8, npc:get_distance(hero) - FOLLOW_DISTANCE))
+  pose(true)
+end
+
+local function place_denna(map, hero)
+  if map:get_entity("denna") ~= nil then
+    return
+  end
+  local x, y, layer = beside_hero(hero)
+  local denna = map:create_npc({
+    name = "denna",
+    layer = layer,
+    x = x,
+    y = y,
+    direction = hero:get_direction(),
+    subtype = 1,
+    sprite = "npc/woman_1a",
+  })
+  if denna == nil then
+    return
+  end
+  denna:set_traversable(true)
+  denna.chat_who = { key = "denna", label = "Denna" }
+  function denna:on_interaction()
   end
 end
 
 local function attach(map)
-  if map:get_entity("companion") ~= nil then
+  if map:get_entity("elene") ~= nil then
     return
   end
   local hero = map:get_hero()
   if hero == nil then
     return
   end
-  local x, y, layer = beside_hero(hero)
+  place_denna(map, hero)
+  local x, y, layer = beside_hero(hero, map:get_entity("denna"))
   local npc = map:create_npc({
-    name = "companion",
+    name = "elene",
     layer = layer,
     x = x,
     y = y,
@@ -450,7 +558,7 @@ local function attach(map)
   if npc == nil then
     return
   end
-  npc.chat_who = { key = "denna", label = "Denna" }
+  npc.chat_who = { key = "elene", label = "Elene" }
   npc:set_traversable(true)
   function npc:on_movement_changed(movement)
     local direction = movement:get_direction4()
@@ -460,7 +568,7 @@ local function attach(map)
     end
   end
   function npc:on_interaction()
-    talk_denna(map:get_game(), npc)
+    open_chat(map:get_game(), { key = "elene", label = "Elene" })
   end
   sol.timer.start(npc, 400, function()
     follow(npc)

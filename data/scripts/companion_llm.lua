@@ -16,6 +16,7 @@ local TIMEOUT_MS = 45000
 local FALLBACK = {
   denna = "Say that again. I was looking at you, not listening.",
   teacher = "Quiet. I was listening for a name, not for you.",
+  elene = "I was not listening. Say that again.",
 }
 
 local function finish(callback, text)

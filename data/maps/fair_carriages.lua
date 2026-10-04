@@ -35,6 +35,18 @@ function map:on_started()
     npc.line = person.line
   end
 
+  local width, height = map:get_size()
+  for i = 1, 5 do
+    map:create_enemy({
+      name = "fair_slime_" .. i,
+      breed = "yard_slime",
+      x = width - 96 - ((i - 1) % 3) * 28,
+      y = math.floor(height / 2) - 24 + math.floor((i - 1) / 3) * 32,
+      layer = 0,
+      direction = 2,
+    })
+  end
+
   map:create_teletransporter({
     layer = 0,
     x = 0,
