@@ -379,22 +379,43 @@ function open_chat(game, who)
   sol.menu.start(game, chat_menu)
 end
 
+local function beside_hero(hero)
+  local map = hero:get_map()
+  local x, y, layer = hero:get_position()
+  local spots = {
+    { x - 20, y + 12 },
+    { x + 20, y + 12 },
+    { x, y + 24 },
+    { x, y - 16 },
+  }
+  for _, spot in ipairs(spots) do
+    if map:get_ground(spot[1], spot[2], layer) == "traversable" then
+      return spot[1], spot[2], layer
+    end
+  end
+  return x, y, layer
+end
+
 local function follow(npc)
   local map = npc:get_map()
   if map == nil or chat_open then
     return
   end
   local hero = map:get_hero()
+  if hero == nil then
+    return
+  end
   local sprite = npc:get_sprite()
   local distance = npc:get_distance(hero)
+  if distance > 200 then
+    local px, py, layer = beside_hero(hero)
+    npc:set_position(px, py, layer)
+    distance = npc:get_distance(hero)
+  end
   if distance > FOLLOW_DISTANCE then
-    -- Walk the gap down to 5 tiles. Aiming at the hero's body stops
-    -- immediately, because the hero is solid.
-    local movement = sol.movement.create("straight")
+    local movement = sol.movement.create("path_finding")
     movement:set_speed(FOLLOW_SPEED)
-    movement:set_angle(npc:get_angle(hero))
-    movement:set_max_distance(distance - FOLLOW_DISTANCE)
-    movement:set_smooth(false)
+    movement:set_target(hero)
     movement:start(npc)
     if sprite ~= nil then
       sprite:set_direction(npc:get_direction4_to(hero))
@@ -416,12 +437,12 @@ local function attach(map)
   if hero == nil then
     return
   end
-  local x, y, layer = hero:get_position()
+  local x, y, layer = beside_hero(hero)
   local npc = map:create_npc({
     name = "companion",
     layer = layer,
-    x = x - 20,
-    y = y + 12,
+    x = x,
+    y = y,
     direction = hero:get_direction(),
     subtype = 1,
     sprite = SPRITE,

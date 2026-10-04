@@ -1353,6 +1353,16 @@ tile{
   pattern = "fireplace_grey_up",
 }
 
+tile{
+  layer = 0,
+  x = 24,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "122",
+  tileset = "castle",
+}
+
 destination{
   name = "destination",
   layer = 0,

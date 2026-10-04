@@ -382,6 +382,7 @@ enemy{ id = "crow", description = "Crow" }
 enemy{ id = "spiderskull", description = "Spiderskull" }
 enemy{ id = "wendigo", description = "Wendigo" }
 enemy{ id = "yard_swordsman", description = "Yard swordsman" }
+enemy{ id = "yard_clucko", description = "Yard clucko" }
 
 entity{ id = "arrow", description = "arrow" }
 entity{ id = "check", description = "check" }

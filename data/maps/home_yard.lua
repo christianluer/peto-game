@@ -36,7 +36,7 @@ function map:on_started()
 
   local fair_open = false
   local function try_open_fair()
-    if fair_open or map:get_entities_count("yard_swordsman") > 0 then
+    if fair_open or map:get_entities_count("yard_swordsman") > 0 or map:get_entities_count("yard_clucko") > 0 then
       return
     end
     fair_open = true
@@ -68,6 +68,23 @@ function map:on_started()
     local enemy = map:get_entity("yard_swordsman_" .. i)
     if enemy ~= nil then
       function enemy:on_dead()
+        try_open_fair()
+      end
+    end
+  end
+  local clucko_spots = { { 112, 48 }, { 144, 72 }, { 176, 48 } }
+  for i, spot in ipairs(clucko_spots) do
+    map:create_enemy({
+      name = "yard_clucko_" .. i,
+      breed = "yard_clucko",
+      x = spot[1],
+      y = spot[2],
+      layer = 0,
+      direction = 3,
+    })
+    local clucko = map:get_entity("yard_clucko_" .. i)
+    if clucko ~= nil then
+      function clucko:on_dead()
         try_open_fair()
       end
     end

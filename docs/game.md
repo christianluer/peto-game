@@ -48,7 +48,7 @@ Ollama and the model weights stay outside this repo, in `~/.ollama`. The model i
 
 NPCs use `set_traversable(true)`. This Solarus build has no `set_traversable_by`. Map scripts already define `map:on_started`, so a listener on the map metatable for that event does not run. Spawn something on every map from `game` `on_map_changed`.
 
-Each visit to the yard spawns 1, 2, or 3 `yard_swordsman` enemies along the south edge. They notice the hero at 230 pixels, then walk in. The sword hurts only at melee range, for the same 1 life point as the hero's slash. They have 4 life.
+Each visit to the yard spawns 1, 2, or 3 swordsmen along the south edge and 3 cluckos in the upper left. Shared notice range, hit, and sprites live in `data/scripts/yard_enemy.lua`. Swordsmen notice at 230 pixels. Their hit is the hero's sword plus 20 percent, rounded up to a whole life point. Cluckos notice at 70 percent of that, stand still, fire two fireballs (half a spell's length, same damage as water), then peck for half a sword. The fair path opens after the swordsmen and the cluckos from that visit are dead.
 
 ## Licenses
 
